@@ -1,0 +1,102 @@
+fieldLayouts:
+  2df0180e-ac8a-4dda-840f-e01086765d40:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: d5339bf0-0c3b-4e06-a372-13a219e9f891 # Main Logo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d5aeccbc-ab5b-4181-a4bc-4f79ad425a65
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 161a6acc-afa0-433b-8025-6acc2264700c # Looking For Care
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 610303c8-7e36-48b8-a6aa-d04d3140e395
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9c2a17e8-dfae-42bd-a54a-f8e60a086dd2 # Looking For Work
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cdff180e-196f-4e63-841b-df9c49e21861
+            userCondition: null
+            warning: null
+            width: 100
+        name: Header
+        uid: 976bc203-df27-4d31-b310-4a76105e4683
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 7664e65c-c618-44aa-9940-910b2af26a5d # Header Strip Banner Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d7bd1fdb-e316-49d2-befb-1728688b2e7b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0d7b7175-a585-4fc4-ba24-47add337e4b8 # Header Strip Banner Background Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b67234ca-f358-407c-943f-ef79d596127e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1d494a6d-9319-4979-87bb-cedf6f862d06 # Header Strip Banner Text Colour
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dd4bc7ba-3b49-45cf-be7f-287ae570ed58
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 93945c5e-9742-4713-8ae1-b10d9c689ca1 # Header Stip Banner Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eddb10a0-0423-45dc-84df-2fa36934c1f6
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Top Strip Banner'
+        uid: e90c44c1-12b9-4bff-92bc-7082dbc5678c
+        userCondition: null
+handle: header
+name: Header
+sortOrder: 3

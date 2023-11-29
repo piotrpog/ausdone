@@ -1,0 +1,105 @@
+field: eb32cbf9-8c3b-4bc5-b478-7efe71705091 # Matrix
+fieldLayouts:
+  987398d4-2e5b-43f8-aa73-b902c9427d94:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a0e35ad9-1dbc-41f1-b262-37998a5ebf53 # text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a1d1862-377d-4c45-9f95-e6bc498c76d2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 245dd33b-36ba-4899-ba9a-98e124d63870 # url2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 225adc6d-91fb-4661-abde-8157e7e436ef
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e8398172-dfa8-4b66-88d7-90e5fb4c5fca # photo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 221276b8-e6ae-4b99-93d3-ddafd22464b5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 5d2efcd1-5c98-4870-b1a5-ce090ea87612
+        userCondition: null
+fields:
+  245dd33b-36ba-4899-ba9a-98e124d63870: # url2
+    columnSuffix: htbdnxsf
+    contentColumnType: text
+    fieldGroup: null
+    handle: url2
+    instructions: null
+    name: url2
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a0e35ad9-1dbc-41f1-b262-37998a5ebf53: # text
+    columnSuffix: etkopsqg
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: null
+    name: text
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e8398172-dfa8-4b66-88d7-90e5fb4c5fca: # photo
+    columnSuffix: qxkpbizx
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: photo
+    instructions: null
+    name: photo
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: firstblock
+name: firstBlock
+sortOrder: 1

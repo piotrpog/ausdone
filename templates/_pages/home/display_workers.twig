@@ -1,0 +1,132 @@
+ <section class="lg:py-[100px] py-[50px] bg-[#F5F5F5]">
+        <div class="lg:container mx-auto px-4">
+            <div class="text-center xl:mb-[80px] mb-[50px]">
+                <h4
+                    class="2xl:text-[22px] lg:text-[18px] sm:text-[14px] text-[12px]  font-openSans tracking-[0.1em] text-[#707070]">
+                    AUSDONE PERSONAL
+                    SUPPORT</h4>
+                <h2
+                    class="2xl:text-[80px] xl:text-[64px] lg:text-[48px] sm:text-[32px] text-[26px] sm:my-auto my-2 font-openSans sm:leading-[1.5] leading-[1] -tracking-[0.05em] text-[#707070] font-bold">
+                    Find a
+                    carer that can
+                    support your needs
+                </h2>
+                <p
+                    class="font-openSans 2xl:text-[30px] xl:text-[23px] lg:text-[18px] sm:text-[16px] text-[14px]   -tracking-[0.05em] text-[#707070]">
+                    Our proffessional
+                    carers are all
+                    qualified and have the nessasry skills to help you or your loved one at home. Everyone
+                    is looking for different attributes when finding someone they can trust to enter their home.</p>
+            </div>
+
+
+            
+
+            {# Create an entry query and set some parameters on it #}
+            {% set entries = craft.entries()
+            .section('workers')
+            .orderBy('postDate DESC')
+            .limit(6) %}
+
+           
+
+{# Check if there are any entries #}
+{% if entries | length %}
+   <div class="grid xl:grid-cols-3 lg:grid-cols-2  grid-cols-1 gap-x-[16px] xl:gap-y-[53px] gap-y-[30px]">
+        {# Loop through entries and display data in a list #}
+        {% for worker in entries %}
+       
+
+ <div class="flex sm:flex-row flex-col gap-[16px] p-[32px_18px] bg-white border-t-[10px] border-b-[10px] border-[#A0C7C5]">
+                    <div
+                        class="2xl:flex-[0_0_183px] flex-[0_0_100px] 2xl:min-w-auto min-w-[120px] flex flex-col sm:items-start items-center">
+                        <div>
+                            <img src="/images/avatar.png" alt="">
+                        </div>
+                        <div class="2xl:my-[28px] my-[16px]  flex-1">
+                            <h4 class="font-bold  2xl:text-[18px] text-[14px]   -tracking-[0.01em] text-[#707070]">
+                                Languages spoken <br>
+                                <span class="font-semibold">Cantonese, Mandarin</span>
+                            </h4>
+                        </div>
+                        <a href="#"
+                            class="inline-flex items-center justify-center bg-[#A4CBC9] text-[#18605D] 2xl:min-w-[161px] min-w-[100%] 2xl:text-[18px] text-[16px] rounded-[22px] h-[44px] font-semibold font-openSans  hover:bg-[#18605D] hover:text-[#fff]  transition-all">Request</a>
+                    </div>
+                    <div class="flex-1">
+                        <h3
+                            class="font-openSans font-semibold 2xl:text-[30px] text-[22px] -tracking-[0.05em] text-[#707070] mb-[7px]">
+                           {{ worker.nameFirst }}
+                        </h3>
+                        <hr class="border-[#559A96] my-[8px]">
+                        <p
+                            class=" font-openSans 2xl:text-[22px] text-[16px] -tracking-[0.01em] text-[#707070] mb-[15px]  2xl:min-h-[113px] lg:min-h-[80px]">
+                            Wendy is
+                            studing to
+                            become a nurse and has 10+ years experience in aged care</p>
+                        <ul>
+                            <li
+                                class="flex 2xl:gap-[16.5px] gap-[8px]  font-semibold 2xl:text-[18px] text-[16px]   -tracking-[0.01em] text-[#707070] leading-[30px]">
+                                <i class="inline-flex top-[9px] 2xl:flex-initial flex-[0_0_16px]"><img
+                                        src="/images/tick.svg" alt=""></i> <span class="flex-1">Certificate
+                                    III</span>
+                            </li>
+                            <li
+                                class="flex 2xl:gap-[16.5px] gap-[8px]  font-semibold 2xl:text-[18px] text-[16px]   -tracking-[0.01em] text-[#707070] leading-[30px]">
+                                <i class="inline-flex top-[9px] 2xl:flex-initial flex-[0_0_16px]"><img
+                                        src="/images/tick.svg" alt=""></i><span class="flex-1">Certificate
+                                    IV</span>
+                            </li>
+                            <li
+                                class="flex 2xl:gap-[16.5px] gap-[8px]  font-semibold 2xl:text-[18px] text-[16px]   -tracking-[0.01em] text-[#707070] leading-[30px]">
+                                <i class="inline-flex top-[9px] 2xl:flex-initial flex-[0_0_16px]"><img
+                                        src="/images/tick.svg" alt=""></i><span class="flex-1">Drivers
+                                    license</span>
+                            </li>
+                            <li
+                                class="flex 2xl:gap-[16.5px] gap-[8px]  font-semibold 2xl:text-[18px] text-[16px]   -tracking-[0.01em] text-[#707070] leading-[30px]">
+                                <i class="inline-flex top-[9px] 2xl:flex-initial flex-[0_0_16px]"><img
+                                        src="/images/tick.svg" alt=""></i><span class="flex-1">Police
+                                    check</span>
+                            </li>
+                            <li
+                                class="flex 2xl:gap-[16.5px] gap-[8px]  font-semibold 2xl:text-[18px] text-[16px]   -tracking-[0.01em] text-[#707070] leading-[30px]">
+                                <i class="inline-flex top-[9px] 2xl:flex-initial flex-[0_0_16px]"><img
+                                        src="/images/tick.svg" alt=""></i><span class="flex-1">Work with
+                                    children check</span>
+                            </li>
+                        </ul>
+                        <ul class="flex items-center gap-[16px] 2xl:pl-[36.5px] pl-[24px] mt-[8px]">
+                            <li><img src="/images/spoon.svg" alt=""></li>
+                            <li><img src="/images/cars.svg" alt=""></li>
+                            <li><img src="/images/degree.svg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No entries found in the specified section.</p>
+{% endif %}
+
+
+            
+
+
+             <!-- Show more -->               
+            <div class="text-center sm:mt-[90px] mt-[30px]">
+                <a href="#"
+                    class="inline-block font-semibold font-openSans underline -tracking-[0.01em] text-[#6c2b77]">Show
+                    More…</a>
+            </div>
+        </div>
+    </section>
+
+    {{ dump() }}
+    

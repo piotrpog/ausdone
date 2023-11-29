@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+{% set htmlAttr = {
+	lang: currentSite.language,
+	dir: craft.app.i18n.getLocaleById(currentSite.id).getOrientation(),
+} %}
+
+<html {{attr(htmlAttr)}}>
+<head>
+
+<!-- Template created by Piotr Pogorzelski - craftsnippets.com -->
+
+{% include '_system/seo' %}
+{% include '_system/meta' %}
+{% include '_system/link' %}
+{% include '_system/favicons' %}
+{% include '_system/fonts' %}
+{% include '_system/static' %}
+{% include '_system/tag_manager' %}
+
+</head>
+
+{% set bodyAttr = {
+	class: [
+		body_class ?? null,
+		craft.app.request.isMobileBrowser() ? 'is-mobile' : 'is-desktop',
+	]
+} %}
+
+<body {{attr(bodyAttr)}}>
+
+
+{% include '_system/tag_manager' %}
+{% include '_system/js_body_top' %}
+
+{% block layout %}{% endblock %}
+
+{% include '_system/js_body_bottom' %}
+</body>
+</html>

@@ -1,0 +1,12 @@
+columnSuffix: xzcbaigb
+contentColumnType: char(7)
+fieldGroup: c13bba3b-5701-4f74-b0d6-91e06e282c54 # Header
+handle: headerStripBannerTextColour
+instructions: null
+name: 'Header Strip Banner Text Colour'
+searchable: false
+settings:
+  defaultColor: '#ffffff'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

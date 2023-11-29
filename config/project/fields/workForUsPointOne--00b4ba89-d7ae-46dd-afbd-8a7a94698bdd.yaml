@@ -1,0 +1,19 @@
+columnSuffix: ecgfgveo
+contentColumnType: text
+fieldGroup: c9caa7b1-6e38-40ce-9e7b-2fb4bf84a335 # Footer
+handle: workForUsPointOne
+instructions: null
+name: 'Work For Us Point One'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

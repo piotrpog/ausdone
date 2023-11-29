@@ -1,0 +1,18 @@
+ <script>
+        const menuButton = document.getElementById('menuButton');
+        const closeButton = document.getElementById('closeButton');
+        const menuDiv = document.querySelector('.menuDiv');
+        const backdropDiv = document.querySelector('.backdrop');
+
+        menuButton.addEventListener('click', () => {
+            document.body.classList.toggle('show-menu')
+        });
+
+        closeButton.addEventListener('click', () => {
+            document.body.classList.toggle('show-menu')
+        });
+
+        backdropDiv.addEventListener('click', () => {
+            document.body.classList.toggle('show-menu')
+        });
+    </script>

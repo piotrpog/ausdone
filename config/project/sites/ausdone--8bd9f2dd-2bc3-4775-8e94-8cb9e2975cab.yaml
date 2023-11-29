@@ -1,0 +1,9 @@
+baseUrl: $PRIMARY_SITE_URL
+enabled: true
+handle: ausdone
+hasUrls: true
+language: en-AU
+name: Ausdone
+primary: true
+siteGroup: be8c0e12-0ed4-424f-a76f-ee2aa48a5a7b # Ausdone
+sortOrder: 1

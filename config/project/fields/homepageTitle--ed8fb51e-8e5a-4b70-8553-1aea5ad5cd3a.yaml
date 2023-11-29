@@ -1,0 +1,19 @@
+columnSuffix: ikzzhooh
+contentColumnType: text
+fieldGroup: a85eb049-52b5-441c-958f-e27190b3f0ee # Common
+handle: homepageTitle
+instructions: null
+name: 'Homepage title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

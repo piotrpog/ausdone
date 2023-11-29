@@ -1,0 +1,40 @@
+columnSuffix: ntmfvulv
+contentColumnType: text
+fieldGroup: 6d3cda15-81bb-47f4-8e93-9da4f97bf59a # Worker
+handle: languagespoken
+instructions: null
+name: LanguageSpoken
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Language Name'
+            -
+              - handle
+              - languageName
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

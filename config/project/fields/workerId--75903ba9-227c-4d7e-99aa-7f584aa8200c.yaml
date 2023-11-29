@@ -1,0 +1,19 @@
+columnSuffix: swjdokxz
+contentColumnType: string(256)
+fieldGroup: 6d3cda15-81bb-47f4-8e93-9da4f97bf59a # Worker
+handle: workerId
+instructions: null
+name: 'Worker ID'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 64
+  code: true
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

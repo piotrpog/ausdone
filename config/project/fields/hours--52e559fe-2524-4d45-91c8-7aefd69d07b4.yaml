@@ -1,0 +1,59 @@
+columnSuffix: ynzfbaka
+contentColumnType: text
+fieldGroup: 6d3cda15-81bb-47f4-8e93-9da4f97bf59a # Worker
+handle: hours
+instructions: null
+name: Hours
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - hours
+            -
+              - handle
+              - hours
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - checked
+            -
+              - handle
+              - checked
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

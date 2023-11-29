@@ -1,0 +1,19 @@
+columnSuffix: hjzcicgi
+contentColumnType: text
+fieldGroup: 6d4c9dba-9566-43f0-a739-a4f26cc431a9 # Home Hero Banner
+handle: h3Text
+instructions: null
+name: 'H3 Text'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

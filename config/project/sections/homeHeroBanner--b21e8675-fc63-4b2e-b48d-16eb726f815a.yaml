@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: homeHeroBanner
+name: 'Home Hero Banner'
+propagationMethod: all
+siteSettings:
+  8bd9f2dd-2bc3-4775-8e94-8cb9e2975cab: # Ausdone
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

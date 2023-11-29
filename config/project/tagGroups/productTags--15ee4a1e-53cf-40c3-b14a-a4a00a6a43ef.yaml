@@ -1,0 +1,37 @@
+fieldLayouts:
+  7b5a40b2-2658-40bc-ad66-ae320a5edc4c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: cce4bdbd-4c62-47fe-b820-ad82fa4d8310
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: fe4658c8-6490-4182-b7a5-e8044e16758a
+        userCondition: null
+handle: productTags
+name: 'product tags'

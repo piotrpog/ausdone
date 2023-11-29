@@ -1,0 +1,18 @@
+{% extends '_layouts/layout_base' %}
+
+{% set body_class = 'page-home' %}
+ 
+    {% block header %}
+        {% include '_components/header' %}
+    {% endblock %}
+
+    {% block body %}
+        {% include '_pages/home/herobanner' %}
+        {% include '_pages/home/services' %}
+        {% include '_pages/home/callout_bottom' %}
+        {% include '_pages/home/display_workers' %}
+    {% endblock %}
+
+    {% block footer %}
+        {% include '_components/footer' %}
+    {% endblock %}
