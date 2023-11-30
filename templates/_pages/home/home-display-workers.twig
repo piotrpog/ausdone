@@ -25,10 +25,11 @@
             {# Create an entry query and set some parameters on it #}
             {% set entries = craft.entries()
             .section('workers')
+             .with(['photo'])
             .orderBy('postDate DESC')
-            .limit(6) %}
+            .limit(6).collect() %}
 
-           
+          {{ dump(entries) }}     
 
 {# Check if there are any entries #}
 {% if entries | length %}
@@ -41,7 +42,27 @@
                     <div
                         class="2xl:flex-[0_0_183px] flex-[0_0_100px] 2xl:min-w-auto min-w-[120px] flex flex-col sm:items-start items-center">
                         <div>
-                            <img src="/images/avatar.png" alt="">
+                               {% set someAsset1 = worker.photo[0] ?? null %}
+
+                                {% set settings = 
+                                    [
+                                        {
+                                            asset: someAsset1,
+                                            transform: {
+                                                width: 183,
+                                                height: 183,
+                                                mode: 'crop',
+                                            },
+                                        }       
+                                    ]
+                                %}
+
+                                {% set htmlAttributes = {
+                                    class: 'some-class',
+                                } %}
+
+                                {{ craft.images.pictureMultiple(settings, htmlAttributes) }}
+
                         </div>
                         <div class="2xl:my-[28px] my-[16px]  flex-1">
                             <h4 class="font-bold  2xl:text-[18px] text-[14px]   -tracking-[0.01em] text-[#707070]">
@@ -128,5 +149,5 @@
         </div>
     </section>
 
-    {{ dump() }}
+
     

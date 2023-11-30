@@ -1,7 +1,6 @@
-{# v4 #}
 {% if currentUser and currentUser.can('accessCp') and not craft.app.request.isLivePreview %}
     {% set element = element|default(craft.app.urlManager.matchedElement) %}
-    {% if element and element.isEditable %}
+    {% if element and element.canSave(currentUser) %}
         {% set editLink = element.getCpEditUrl() %}
         {% if element.draftId is defined and element.draftId is not null %}
             {% set editLink = editLink ~ '&draftId='~ element.draftId %}
@@ -11,7 +10,23 @@
         {% set editLink = cpUrl() %}
         {% set editText = 'control panel'|t %}
     {% endif %}
-    <aside class="cs-edit-link">
-        <a href="{{editLink}}" target="_blank" class="button is-info">{{editText}}</a>
-    </aside>    
+    <aside class="edit-link">
+        <a href="{{editLink}}" target="_blank" class="">{{editText}}</a>
+    </aside>
 {% endif %}
+
+{% css %}
+.edit-link{
+    position: fixed;
+    bottom: 3rem;
+    right: 1rem;
+    z-index: 9999;
+}
+.edit-link a{
+    padding: 0.3rem 0.6rem;
+    background-color: white;
+    display: inline-block;
+    box-shadow: 5px 5px 30px 0px rgb(171, 173, 202);
+    border-radius: 3px;
+}
+{% endcss %}

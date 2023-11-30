@@ -3,7 +3,7 @@ contentColumnType: text
 fieldGroup: 6d3cda15-81bb-47f4-8e93-9da4f97bf59a # Worker
 handle: websiteBlurb
 instructions: null
-name: website_blurb
+name: 'Website Blurb'
 searchable: false
 settings:
   byteLimit: null

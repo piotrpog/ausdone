@@ -200,6 +200,18 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 8f54334c-d895-4acb-9356-c254a323bbba # Website Blurb
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f89ff414-39be-4068-b330-10b7c789e6e4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: b9826fc5-9f26-43a7-a627-f336c2936d74 # Flag own vehicle
             instructions: null
             label: null

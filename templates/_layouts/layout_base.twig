@@ -2,9 +2,13 @@
 
 {% block layout %}
 
-	{% block header %}header{% endblock %}
+	{% block header %}
+	 {% include '_components/header' %}
+	 {% endblock %}
 
 	{% block body %}content{% endblock %}
+
+	{% include '_components/quick_edit.twig' %}
 
 	{% block footer %}footer{% endblock %}
  

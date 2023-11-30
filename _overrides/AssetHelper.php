@@ -1,6 +1,6 @@
 <?php
 
-namespace craftyfm\filemaker\feedme;
+namespace craft\feedme\helpers;
 
 use Cake\Utility\Hash;
 use Craft;
@@ -19,7 +19,7 @@ use Throwable;
 use yii\base\Exception;
 use yii\base\InvalidArgumentException;
 
-class AssetHelper extends craft\feedme\helpers\AssetHelper
+class AssetHelper 
 {
     // Public Methods
     // =========================================================================

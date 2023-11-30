@@ -54,7 +54,7 @@ class Plugin extends BasePlugin
             $token = Craft::$app->getCache()->getOrSet('api-token', function () {
                 // Create Guzzle client
                 // file to store cookie data
-                $cookieFile = 'cookie_jar.txt';
+                $cookieFile = '../cookie_jar.txt';
                 $cookieJar = new FileCookieJar($cookieFile, TRUE);
                 $client = new Client([
                     'base_uri' => (string)$this->getSettings()->authURL ,

@@ -7,9 +7,9 @@
         "craftcms/generator": "^1.3.0",
         "craftcms/webhooks": "3.0.5",
         "craftsnippets/craft-image-toolbox": "2.2.3",
-        "craftyfm/craft-my-feedme": "dev-master",
-        "craftyfm/filemaker": "dev-master",
+        "craftyfm/filemaker": "1.0.0",
         "doublesecretagency/craft-cpcss": "2.6.0",
+        "verbb/formie": "2.0.43",
         "vlucas/phpdotenv": "^5.4.0"
     },
     "require-dev": {
@@ -19,7 +19,13 @@
     "autoload": {
         "psr-4": {
             "modules\\": "modules/"
-        }
+        },
+        "exclude-from-classmap": [
+            "vendor/craftcms/feed-me/src/helpers/AssestHelper.php"
+        ],
+        "files": [
+            "_overrides/AssetHelper.php"
+        ]
     },
     "config": {
         "allow-plugins": {
@@ -49,7 +55,7 @@
         },
         {
             "type": "path",
-            "url": "./plugins/*"
+            "url": "./plugins/filemaker/*"
         }
     ]
 }
