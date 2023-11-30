@@ -1,0 +1,35 @@
+columnSuffix: tjslivmd
+contentColumnType: string(7)
+fieldGroup: 91eda38b-77c5-4277-a644-64ed213a1d47 # Carer Request
+handle: preferredLanguage
+instructions: null
+name: 'Preferred Language'
+searchable: false
+settings:
+  columnType: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - English
+        -
+          - value
+          - english
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Chinese
+        -
+          - value
+          - chinese
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

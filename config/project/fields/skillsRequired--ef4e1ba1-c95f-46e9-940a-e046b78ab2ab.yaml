@@ -1,0 +1,23 @@
+columnSuffix: onpcmsjo
+contentColumnType: string
+fieldGroup: 91eda38b-77c5-4277-a644-64ed213a1d47 # Carer Request
+handle: skillsRequired
+instructions: null
+name: 'Skills Required'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - ''
+        -
+          - value
+          - ''
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\MultiSelect
