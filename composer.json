@@ -21,11 +21,12 @@
             "modules\\": "modules/"
         },
         "exclude-from-classmap": [
-            "vendor/craftcms/feed-me/src/helpers/AssestHelper.php"
+            "vendor/craftcms/feed-me/src/helpers/AssetHelper.php"
         ],
         "files": [
             "_overrides/AssetHelper.php"
         ]
+
     },
     "config": {
         "allow-plugins": {

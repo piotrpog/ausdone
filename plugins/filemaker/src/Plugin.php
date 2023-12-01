@@ -11,7 +11,7 @@ use GuzzleHttp\Cookie\FileCookieJar;
 use craft\feedme\Plugin as FeedMe;
 use craft\feedme\events\FeedDataEvent;
 use craft\feedme\services\DataTypes;
-use craft\helpers\App;
+use craft\helpers\FileHelper;
 use yii\base\Event;
  
 
@@ -42,10 +42,14 @@ class Plugin extends BasePlugin
     {
         parent::init();
 
+       // $this->createOverrideFolder();
+
         // Defer most setup tasks until Craft is fully initialized
         Craft::$app->onInit(function() {
             $this->attachEventHandlers();
             // ...
+
+            
           
         });
 
@@ -69,10 +73,6 @@ class Plugin extends BasePlugin
                 
                 // Request token
                 $response = $client->request('POST', '', [
-                    // 'form_params' => [
-                    //     'username' => $this->getSettings()->user ,
-                    //     'password' => $this->getSettings()->pass
-                    // ],
                     'headers' => [
                         'Content-Type' => 'application/json',
                          'Authorization' => $basicAuthString 
@@ -160,5 +160,17 @@ class Plugin extends BasePlugin
     {
         // Register event handlers here ...
         // (see https://craftcms.com/docs/4.x/extend/events.html to get started)
+    }
+
+    private function createOverrideFolder(): void
+    {
+
+        $root = $_SERVER["DOCUMENT_ROOT"];
+        $dir = $root . '/aoverrides/';
+
+        if( !file_exists($dir) ) {
+            
+            FileHelper::createDirectory($dir, 0755, false);
+        }
     }
 }

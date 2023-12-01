@@ -2926,15 +2926,23 @@
         },
         {
             "name": "nystudio107/craft-code-editor",
-            "version": "1.0.14",
+            "version": "1.0.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-code-editor.git",
+                "reference": "80d4db7514a1f74e93200cb49e52e8c3731b5a12"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-code-editor/zipball/2784e69cb62d69707e03f2c0b9e0d2a9bdd08209",
-                "reference": "2784e69cb62d69707e03f2c0b9e0d2a9bdd08209",
+                "url": "https://api.github.com/repos/nystudio107/craft-code-editor/zipball/80d4db7514a1f74e93200cb49e52e8c3731b5a12",
+                "reference": "80d4db7514a1f74e93200cb49e52e8c3731b5a12",
                 "shasum": ""
             },
             "require": {
                 "phpdocumentor/reflection-docblock": "^5.0.0"
+            },
+            "require-dev": {
+                "craftcms/cms": "^3.0.0 || ^4.0.0 || ^5.0.0-alpha.1"
             },
             "type": "yii2-extension",
             "extra": {
@@ -2945,6 +2953,7 @@
                     "nystudio107\\codeeditor\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2967,7 +2976,18 @@
                 "markdown",
                 "twig"
             ],
-            "time": "2023-11-25T16:56:35+00:00"
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-code-editor/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/craft-code-editor/issues",
+                "source": "https://github.com/nystudio107/craft-code-editor"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/khalwat",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-11-30T19:22:16+00:00"
         },
         {
             "name": "nystudio107/craft-plugin-vite",
@@ -6963,5 +6983,5 @@
     "platform-overrides": {
         "php": "8.0.2"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -18,10 +18,6 @@ use craft\helpers\UrlHelper;
 use Throwable;
 use yii\base\Exception;
 use yii\base\InvalidArgumentException;
-use craftyfm\filemaker\Plugin as Filemaker;
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
-use craft\Helpers;
 
 class AssetHelper 
 {
@@ -53,88 +49,36 @@ class AssetHelper
 
             return fclose($fp);
         }
-
-        $settings = Filemaker::getInstance()->getSettings();
-        //$cookieFile = '../cookie_jar.txt';
-        //$cookieJar = new FileCookieJar($cookieFile, TRUE);
-        $client = new Client();
-
-        //create Basic Auth string
-        $basicAuthString = 'Basic ' . base64_encode($settings->user .':'. $settings->pass);
-        $token = Craft::$app->getCache()->get('api-token');
-
-        $host = UrlHelper::hostInfo($srcName);
-        $host = 'fm.x2network.net';
-
-        
-            // Send a GET request to the file URL
-            $headers = [
-                    'Accept' => '*/*',
-                     'Authorization' => $basicAuthString,
-                     'token' => $token,
-                     'host' => $host,
-            ];
-
-            // Create a Guzzle Request with the specified headers
-            $request = new Request('GET', $srcName, $headers);
-
-
-            $requestHeaders = 'Headers:' . PHP_EOL;
-            foreach ($request->getHeaders() as $name => $values) {
-                $requestHeaders .= sprintf("%s: %s\n", $name, implode(', ', $values));
-            }
-            $requestHeaders .=  PHP_EOL;
-
-            $response = $client->send($request);
-
-            Plugin::info('Guzzle download of asset `{i}` - `{j}`  ', ['i' => $requestHeaders, 'j' => $response->getStatusCode() ]);
-
-            Plugin::info('Guzzle request Auth `{i}` `{j}` {k}', ['i' => $request->getHeader('Authorization')[0], 'j' => $request->getHeader('token')[0], 'k' => $request->getHeader('Accept')[0]   ]);
-        
-            // Check if the request was successful (status code 200)
-            if ($response->getStatusCode() === 200) {
-                file_put_contents($dstName, $response->getBody());
-               return $response->getStatusCode();
-            } else {
-                Plugin::error('Guzzle download of asset `{i}` - `{j}` ', ['i' => $srcName, 'j' => $response->getStatusCode()]);
-               return $response->getStatusCode();
-               
-            }
-
-            
-        
-    } 
-         
  
 
-        // $newChunkSize = $chunkSize * (1024 * 1024);
-        // $bytesCount = 0;
-        // $handle = fopen($srcName, 'rb'); //rb
-        // $fp = fopen($dstName, 'wb'); //wb
+        $newChunkSize = $chunkSize * (1024 * 1024);
+        $bytesCount = 0;
+        $handle = fopen($srcName, 'rb'); //rb
+        $fp = fopen($dstName, 'wb'); //wb
 
-        // if ($handle === false) {
-        //     return false;
-        // }
+        if ($handle === false) {
+            return false;
+        }
 
-        // while (!feof($handle)) {
-        //     $data = fread($handle, $newChunkSize);
-        //     fwrite($fp, $data, strlen($data));
+        while (!feof($handle)) {
+            $data = fread($handle, $newChunkSize);
+            fwrite($fp, $data, strlen($data));
 
-        //     if ($returnbytes) {
-        //         $bytesCount += strlen($data);
-        //     }
-        // }
+            if ($returnbytes) {
+                $bytesCount += strlen($data);
+            }
+        }
 
-        // $status = fclose($handle);
+        $status = fclose($handle);
 
-        // fclose($fp);
+        fclose($fp);
 
-        // if ($returnbytes && $status) {
-        //     return $bytesCount;
-        // }
+        if ($returnbytes && $status) {
+            return $bytesCount;
+        }
 
-        // return $status;
-   // }
+        return $status;
+    }
 
     /**
      * @param array $urls
