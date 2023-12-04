@@ -51,5 +51,5 @@ name: 'Workers Photo'
 sortOrder: 1
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-transformFs: ''
+transformFs: workers
 transformSubpath: ''

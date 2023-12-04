@@ -63,8 +63,10 @@ class AssetHelper
         $basicAuthString = 'Basic ' . base64_encode($settings->user .':'. $settings->pass);
         $token = Craft::$app->getCache()->get('api-token');
 
-        $host = UrlHelper::hostInfo($srcName);
-        $host = 'fm.x2network.net';
+
+        $host = preg_replace("(^https?://)", "", UrlHelper::hostInfo($srcName));
+        
+       Plugin::info('Guzzle Host `{i}`  ', ['i' => $host  ]);
 
         
             // Send a GET request to the file URL
@@ -96,7 +98,7 @@ class AssetHelper
                 file_put_contents($dstName, $response->getBody());
                return $response->getStatusCode();
             } else {
-                Plugin::error('Guzzle download of asset `{i}` - `{j}` ', ['i' => $srcName, 'j' => $response->getStatusCode()]);
+                Plugin::error('Guzzle Error`{i}` - `{j}` ', ['i' => $srcName, 'j' => $response->getStatusCode()]);
                return $response->getStatusCode();
                
             }

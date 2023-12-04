@@ -1,4 +1,4 @@
-dateModified: 1701392455
+dateModified: 1701560224
 elementSources:
   craft\elements\Asset:
     -
@@ -71,6 +71,13 @@ fs:
       path: '@webroot/images'
     type: craft\fs\Local
     url: '@web/images'
+  workers:
+    hasUrls: true
+    name: workers
+    settings:
+      path: /images/workers
+    type: craft\fs\Local
+    url: '@webroot'
 meta:
   __names__:
     0b0cab67-d09f-4537-8f25-e2d3eb67217e: 'Bottom Logo' # Bottom Logo
@@ -96,7 +103,7 @@ meta:
     5f284340-be3f-49a6-b18e-2bbbc297349d: 'Background Image' # Background Image
     6d3cda15-81bb-47f4-8e93-9da4f97bf59a: Worker # Worker
     6d4c9dba-9566-43f0-a739-a4f26cc431a9: 'Home Hero Banner' # Home Hero Banner
-    8bd9f2dd-2bc3-4775-8e94-8cb9e2975cab: Ausdone # Ausdone
+    8bd9f2dd-2bc3-4775-8e94-8cb9e2975cab: English # English
     8f54334c-d895-4acb-9356-c254a323bbba: 'Website Blurb' # Website Blurb
     9c2a17e8-dfae-42bd-a54a-f8e60a086dd2: 'Looking For Work' # Looking For Work
     9c3b9b5a-db9d-4474-a7e0-1be4278b5a4c: 'Certificate first aid' # Certificate first aid
@@ -163,6 +170,7 @@ meta:
     bdf27aa4-ad8c-401f-bad7-a103bd2b7309: 'Home Hero Banner' # Home Hero Banner
     be8c0e12-0ed4-424f-a76f-ee2aa48a5a7b: Ausdone # Ausdone
     c018e54d-63e6-484a-84f2-b32743462803: firstBlock # firstBlock
+    c6b8aa74-a475-4b02-a483-13901b461115: Chinese # Chinese
     c9caa7b1-6e38-40ce-9e7b-2fb4bf84a335: Footer # Footer
     c13bba3b-5701-4f74-b0d6-91e06e282c54: Header # Header
     c28af183-86b2-49d2-92f9-fd6d75e26aa6: 'Address line 2' # Address line 2

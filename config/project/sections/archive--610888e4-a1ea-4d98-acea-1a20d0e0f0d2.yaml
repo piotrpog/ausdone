@@ -4,7 +4,7 @@ handle: archive
 name: Archive
 propagationMethod: all
 siteSettings:
-  8bd9f2dd-2bc3-4775-8e94-8cb9e2975cab: # Ausdone
+  8bd9f2dd-2bc3-4775-8e94-8cb9e2975cab: # English
     enabledByDefault: true
     hasUrls: true
     template: archive/_entry

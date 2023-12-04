@@ -1,0 +1,9 @@
+baseUrl: '@web/cn/'
+enabled: '1'
+handle: chinese
+hasUrls: true
+language: zh-Hans-CN
+name: Chinese
+primary: false
+siteGroup: be8c0e12-0ed4-424f-a76f-ee2aa48a5a7b # Ausdone
+sortOrder: 2
