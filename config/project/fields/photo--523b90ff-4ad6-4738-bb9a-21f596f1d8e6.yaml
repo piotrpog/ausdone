@@ -12,7 +12,7 @@ settings:
   allowedKinds: null
   branchLimit: null
   defaultUploadLocationSource: 'volume:da8cb600-809b-4511-8a8d-3d83d127f66f' # Workers Photo
-  defaultUploadLocationSubpath: null
+  defaultUploadLocationSubpath: '{owner.slug}'
   localizeRelations: false
   maintainHierarchy: false
   maxRelations: null

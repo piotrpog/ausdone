@@ -1,4 +1,4 @@
-dateModified: 1701560224
+dateModified: 1701730281
 elementSources:
   craft\elements\Asset:
     -
@@ -75,9 +75,9 @@ fs:
     hasUrls: true
     name: workers
     settings:
-      path: /images/workers
+      path: '@webroot/images/workers'
     type: craft\fs\Local
-    url: '@webroot'
+    url: '@web'
 meta:
   __names__:
     0b0cab67-d09f-4537-8f25-e2d3eb67217e: 'Bottom Logo' # Bottom Logo
@@ -155,6 +155,7 @@ meta:
     a0e35ad9-1dbc-41f1-b262-37998a5ebf53: text # text
     a85eb049-52b5-441c-958f-e27190b3f0ee: Common # Common
     a247bc60-6eeb-4e4b-8522-07b0f8930f34: 'Certificate three personal care' # Certificate three personal care
+    a9009397-7048-4e62-9892-c4f7fdae8a66: 'Main Menu' # Main Menu
     aabee949-1952-48bd-9739-0b3d81923382: 'Data drives licence' # Data drives licence
     b6af64a8-a5c3-4add-ae6f-7d9cad48df16: 'Certificate three sleep over' # Certificate three sleep over
     b7b3fa8f-eb96-4e9b-8e20-e83f660148ce: Default # Default
@@ -167,6 +168,7 @@ meta:
     b9826fc5-9f26-43a7-a627-f336c2936d74: 'Flag own vehicle' # Flag own vehicle
     ba42f171-44c9-42a0-ab21-710fafeb6b0d: 'Email of Requester' # Email of Requester
     bae20859-015c-43bd-95d0-63c67edb6c28: 'Subscribe Email Text' # Subscribe Email Text
+    bbae794d-848e-45ea-ab84-0edc0c470817: 'Workers Search' # Workers Search
     bdf27aa4-ad8c-401f-bad7-a103bd2b7309: 'Home Hero Banner' # Home Hero Banner
     be8c0e12-0ed4-424f-a76f-ee2aa48a5a7b: Ausdone # Ausdone
     c018e54d-63e6-484a-84f2-b32743462803: firstBlock # firstBlock
@@ -183,6 +185,7 @@ meta:
     da8cb600-809b-4511-8a8d-3d83d127f66f: 'Workers Photo' # Workers Photo
     dbf3edd5-28da-4614-84d3-0841fbb8252b: 'Worker Name' # Worker Name
     dddb2e53-4226-484e-a0b1-64f52e1c7ef3: 'Preferred Timeframe' # Preferred Timeframe
+    deb3f93a-e5fa-42e6-bff2-6ebfc4596f16: 'Workers Search' # Workers Search
     e7aed0e8-a5ac-45c1-9f54-942bd630b588: LanguageSpoken # LanguageSpoken
     e8398172-dfa8-4b66-88d7-90e5fb4c5fca: photo # photo
     eb32cbf9-8c3b-4bc5-b478-7efe71705091: Matrix # Matrix
@@ -208,6 +211,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   feed-me:
     edition: standard
     enabled: true
@@ -216,10 +223,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-    settings:
-      authURL: 'https://fm.x2network.net/fmi/data/v2/databases/ausdone/sessions'
-      pass: 'A4R67YYi&r$'
-      user: fmapi
   formie:
     edition: standard
     enabled: true

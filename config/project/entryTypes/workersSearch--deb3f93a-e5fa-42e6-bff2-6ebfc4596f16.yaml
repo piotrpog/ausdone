@@ -1,5 +1,5 @@
 fieldLayouts:
-  180a9df0-f992-4038-91d9-8300eaee5be0:
+  6f91a9f3-9c18-426a-bad9-cf5cbd9582fa:
     tabs:
       -
         elementCondition: null
@@ -25,31 +25,22 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\assets\AssetTitleField
-            uid: fc491724-b316-469a-a640-f219f946adcc
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 523b90ff-4ad6-4738-bb9a-21f596f1d8e6 # photo
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 83e5b887-f5a5-4857-bfb2-d8c55e99e5a3
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: cbba43b8-cc40-48cb-8ba1-4ebb7f9a0d3a
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 86352114-056c-412a-a90a-59783b93b35e
+        uid: 16192c12-5e06-49c1-af4d-b952bafd9dc1
         userCondition: null
-fs: workers
-handle: workersPhoto
-name: 'Workers Photo'
+handle: workersSearch
+hasTitleField: false
+name: 'Workers Search'
+section: bbae794d-848e-45ea-ab84-0edc0c470817 # Workers Search
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
+titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-transformFs: workers
-transformSubpath: ''
