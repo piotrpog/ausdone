@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cefeb5caa4ef80bae6702769fd4dabbf",
+    "content-hash": "17f6bc05dbcb477f682a782b769f2218",
     "packages": [
         {
             "name": "acclaro/translations",
@@ -1049,12 +1049,12 @@
             "time": "2023-07-18T19:29:36+00:00"
         },
         {
-            "name": "craftyfm/filemaker",
+            "name": "craftyfm/craftcms-filemaker",
             "version": "1.0.0",
             "dist": {
                 "type": "path",
                 "url": "plugins/craftcms-filemaker",
-                "reference": "d9566d28dcce5fcaddfe40054fcba01b5f327686"
+                "reference": "f7968b046ef2afa46b3e8997c7ac7f2030bafe63"
             },
             "require": {
                 "craftcms/cms": "^4.5.0",
@@ -1072,7 +1072,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "craftyfm\\filemaker\\": "src/"
+                    "craftyfm\\craftcms-filemaker\\": "src/"
                 }
             },
             "license": [
