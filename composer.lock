@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17f6bc05dbcb477f682a782b769f2218",
+    "content-hash": "8d47cf2c9e7267d75c964d3cc346c614",
     "packages": [
         {
             "name": "acclaro/translations",
@@ -1051,10 +1051,16 @@
         {
             "name": "craftyfm/craftcms-filemaker",
             "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/trade74/craftcms-filemaker.git",
+                "reference": "80652058fbe70fc55b4eb74ba353ec99d412b9ae"
+            },
             "dist": {
-                "type": "path",
-                "url": "plugins/craftcms-filemaker",
-                "reference": "f7968b046ef2afa46b3e8997c7ac7f2030bafe63"
+                "type": "zip",
+                "url": "https://api.github.com/repos/trade74/craftcms-filemaker/zipball/80652058fbe70fc55b4eb74ba353ec99d412b9ae",
+                "reference": "80652058fbe70fc55b4eb74ba353ec99d412b9ae",
+                "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^4.5.0",
@@ -1071,20 +1077,27 @@
                 "documentationUrl": ""
             },
             "autoload": {
+                "files": [
+                    "src/overrides/AssetHelper.php"
+                ],
                 "psr-4": {
                     "craftyfm\\craftcms-filemaker\\": "src/"
-                }
+                },
+                "exclude-from-classmap": [
+                    "../../vendor/craftcms/feed-me/src/helpers/AssetHelper.php"
+                ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
             "description": "A craft CMS plugin to simplify connection to the Filemaker Data API. Connect to a filemaker database and use a button from Filemaker to push data into Craft CMS. This plugin also using webhooks to push dat into Filemaker's Data API",
             "support": {
-                "email": "stuart@x2network.net"
+                "email": "stuart@x2network.net",
+                "issues": "https://github.com/trade74/craftcms-filemaker/issues",
+                "source": "https://github.com/trade74/craftcms-filemaker/tree/v1.0.0.0"
             },
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2023-12-05T00:04:36+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
