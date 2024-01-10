@@ -1,4 +1,4 @@
-dateModified: 1701730281
+dateModified: 1704858911
 elementSources:
   craft\elements\Asset:
     -
@@ -103,6 +103,7 @@ meta:
     5f284340-be3f-49a6-b18e-2bbbc297349d: 'Background Image' # Background Image
     6d3cda15-81bb-47f4-8e93-9da4f97bf59a: Worker # Worker
     6d4c9dba-9566-43f0-a739-a4f26cc431a9: 'Home Hero Banner' # Home Hero Banner
+    7ab68556-9843-4796-a998-c854caf30678: 'Public Schema'
     8bd9f2dd-2bc3-4775-8e94-8cb9e2975cab: English # English
     8f54334c-d895-4acb-9356-c254a323bbba: 'Website Blurb' # Website Blurb
     9c2a17e8-dfae-42bd-a54a-f8e60a086dd2: 'Looking For Work' # Looking For Work

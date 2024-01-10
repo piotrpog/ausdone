@@ -149,7 +149,7 @@ fieldLayouts:
         uid: cc45036a-5467-4e55-8804-ec8ad305b0f1
         userCondition: null
 handle: mainMenu
-instructions: ''
+instructions: null
 maxNodes: null
 name: 'Main Menu'
 permissions:
