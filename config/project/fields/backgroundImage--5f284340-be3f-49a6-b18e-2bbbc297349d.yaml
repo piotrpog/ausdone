@@ -21,7 +21,7 @@ settings:
   restrictFiles: false
   restrictLocation: false
   restrictedDefaultUploadSubpath: null
-  restrictedLocationSource: 'volume:da8cb600-809b-4511-8a8d-3d83d127f66f' # Workers Photo
+  restrictedLocationSource: 'volume:da8cb600-809b-4511-8a8d-3d83d127f66f' # Workers
   restrictedLocationSubpath: null
   selectionCondition:
     __assoc__:

@@ -11,34 +11,24 @@ settings:
   allowUploads: true
   allowedKinds: null
   branchLimit: null
-  defaultUploadLocationSource: 'volume:da8cb600-809b-4511-8a8d-3d83d127f66f' # Workers Photo
-  defaultUploadLocationSubpath: '{owner.slug}'
+  defaultUploadLocationSource: 'volume:da8cb600-809b-4511-8a8d-3d83d127f66f' # Workers
+  defaultUploadLocationSubpath: '{slug}'
   localizeRelations: false
   maintainHierarchy: false
   maxRelations: null
   minRelations: null
   previewMode: full
   restrictFiles: false
-  restrictLocation: false
+  restrictLocation: true
   restrictedDefaultUploadSubpath: null
-  restrictedLocationSource: 'volume:da8cb600-809b-4511-8a8d-3d83d127f66f' # Workers Photo
-  restrictedLocationSubpath: null
-  selectionCondition:
-    __assoc__:
-      -
-        - elementType
-        - craft\elements\Asset
-      -
-        - fieldContext
-        - global
-      -
-        - class
-        - craft\elements\conditions\assets\AssetCondition
+  restrictedLocationSource: 'volume:da8cb600-809b-4511-8a8d-3d83d127f66f' # Workers
+  restrictedLocationSubpath: '{slug}'
   selectionLabel: null
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  sources: '*'
+  sources:
+    - 'volume:da8cb600-809b-4511-8a8d-3d83d127f66f' # Workers
   targetSiteId: null
   validateRelatedElements: false
   viewMode: list

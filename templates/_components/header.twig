@@ -1,18 +1,11 @@
-<header class="border-b border-[#CECECE] shadow-[0px_4px_6px_rgba(0,0,0,0.16)]">
-        
+<header class="flex flex-col shadow-lg">
     {% include '_components/header/top_strip_banner' %}
 
-        <div class="lg:container mx-auto px-4">
-            <div class="flex items-center py-[19px]">
-                {% include '_components/header/logo' %}
+    <div class="flex items-center justify-between container py-4 gap-2 2xl:gap-5">
+        {% include '_components/header/logo' %}
+        {% include '_components/header/navigation_wide_screen' %}
+        {% include '_components/header/rightside_buttons' %}
+        {% include '_components/header/navigation_narrow_screen' %}
+    </div>
 
-                 {% include '_components/header/navigation_wide_screen' %}
-                 {% include '_components/header/rightside_buttons' %}
-
-                {% include '_components/header/navigation_narrow_button' %}
-            </div>
-        </div>
-
-         {% include '_components/header/navigation_narrow_screen' %}
-         
 </header>

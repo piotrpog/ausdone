@@ -1,0 +1,17 @@
+{% extends '_layouts/layout_base' %}
+
+{% set body_class = 'form' %}
+
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block body %}
+      <h1>FORM</h1>
+        {{ craft.formie.renderForm('jobRequest') }}
+
+    {% endblock %}
+
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}

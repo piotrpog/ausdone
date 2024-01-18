@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ausdone</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body>
+    <div class="font-openSans">
+      <!-- header start -->
+      <header class="flex flex-col shadow-lg">
+        <div
+          class="bg-primary font-openSans 2xl:text-xxl lg:text-lg sm:text-sm px-4 text-xs text-white h-14 text-center uppercase flex justify-center items-center"
+        >
+          <div>
+            <span>TALK TO OUR FRIENDLY STAFF TO ARRANGE A CARER FOR YOUR LOVED ONE</span>
+            <span class="font-bold">CALL (02) 9876 3456</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between container py-5 gap-2 2xl:gap-5">
+          <a href="index.html">
+            <img
+              class="max-w-[150px] 2xl:max-w-[200px]"
+              src="./assets/images/logo.svg"
+              alt="logo"
+            />
+          </a>
+          <div
+            class="xl:flex hidden items-center justify-evenly lg:text-base 3xl:text-xl text-black w-full font-HelveticaNeue font-normal"
+          >
+            <a class="hover:text-primary transition-colors" href="#">Our Services</a>
+            <a class="hover:text-primary transition-colors" href="#">Request a Carer</a>
+            <a class="hover:text-primary transition-colors" href="#">NDIS Provider</a>
+            <a class="hover:text-primary transition-colors" href="./pages/looking_for_work.html"
+              >Looking for Work</a
+            >
+            <a class="hover:text-primary transition-colors" href="#">About Us</a>
+            <a class="hover:text-primary transition-colors" href="#">Contact</a>
+          </div>
+          <div class="xl:flex hidden gap-4 items-center font-HelveticaNeue">
+            <a
+              href="./pages/looking_for_work.html"
+              class="2xl:px-5 px-3 py-1 text-base 2xl:text-xl bg-primary hover:bg-primary-muted hover:text-primary transition-colors font-normal text-white whitespace-nowrap rounded-full"
+            >
+              <span>Looking for Work</span>
+            </a>
+            <button
+              class="2xl:px-5 px-3 py-1 text-base 2xl:text-xl bg-purple hover:bg-purple/30 hover:text-purple transition-colors font-normal text-white whitespace-nowrap rounded-full"
+            >
+              <span>Looking Carers</span>
+            </button>
+          </div>
+          <!-- burger -->
+          <div x-data="{ open: false }" class="xl:hidden flex">
+            <div x-on:click="open = ! open" class="flex flex-col w-6 h-6 justify-around">
+              <span class="h-0.5 w-full bg-black rounded-full"></span>
+              <span class="h-0.5 w-full bg-black rounded-full"></span>
+              <span class="h-0.5 w-full bg-black rounded-full"></span>
+            </div>
+            <div>
+              <div
+                x-on:click="open = ! open"
+                x-show="open"
+                x-transition:enter="transition linier duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition linier duration-300"
+                x-transition:leave-start="opacity-100 "
+                x-transition:leave-end="opacity-0"
+                class="fixed bg-black/30 z-40 inset-0"
+              ></div>
+              <div
+                x-show="open"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 translate-x-full"
+                x-transition:enter-end="opacity-100 translate-x-0"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 translate-x-0"
+                x-transition:leave-end="opacity-0 translate-x-full"
+                class="fixed h-full max-w-lg w-full top-0 right-0 bg-white z-50 flex flex-col py-4 px-5"
+              >
+                <div x-on:click="open = !open" class="self-end flex flex-col relative w-6 h-6">
+                  <span
+                    class="h-0.5 w-full bg-black rounded-full absolute top-1/2 -translate-y-1/2 rotate-45"
+                  ></span>
+                  <span
+                    class="h-0.5 w-full bg-black rounded-full absolute top-1/2 -translate-y-1/2 -rotate-45"
+                  ></span>
+                </div>
+                <ul class="flex flex-col items-start">
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >Our Services</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >Request a Carer</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >NDIS Provider</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >Looking for Work</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >About Us</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+                <div class="flex flex-col gap-4 py-4">
+                  <button
+                    class="bg-primary hover:bg-primary-muted py-2 text-white transition-colors rounded-full w-full text-whote"
+                  >
+                    <span>Looking for Work</span>
+                  </button>
+                  <button
+                    class="bg-purple hover:bg-purple/30 py-2 text-white rounded-full w-full text-whote transition-colors"
+                  >
+                    <span>Looking for Work</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
+          <!-- burger -->
+        </div>
+      </header>
+      <!-- header end -->
+      <!-- main start -->
+      <main>
+        <section>
+          <div class="container pt-9 pb-10 lg:pb-20">
+            <div
+              class="2xl:p-[100px_122px] xl:p-[80px_100px] bg-[url(./assets/images/hero-image-1.png)] sm:p-[50px] p-[30px_20px] bg-cover bg-no-repeat bg-[60%_100%] sm:bg-right-top border-border"
+            >
+              <img src="./assets/images/logo.svg" alt="" class="sm:h-auto h-[22px]" />
+              <h1
+                class="font-openSans font-bold 2xl:text-[100px] lg:text-[72px] sm:text-[42px] text-[30px] -tracking-[0.05em] text-primary"
+              >
+                Family Support
+              </h1>
+              <p
+                class="font-openSans font-light 2xl:text-[45px] lg:text-xxl sm:text-lg text-sm 2xl:leading-[61px] lg:leading-[36px] leading-[28px] -tracking-[0.05em] text-primary 2xl:max-w-[668px] lg:max-w-[400px] max-w-[300px] 2xl:mb-[45px] lg:mb-[30px] mb-[16px]"
+              >
+                We take care of your loved ones with care, compassion and dignity
+              </p>
+              <img src="./assets/images/ndis.svg" alt="" class="sm:h-auto h-10" />
+            </div>
+            <!-- <div
+              class="bg-[url(./assets/images/hero-image-1.png)] bg-[length:102%_cover] border-y border-border bg-center bg-no-repeat items-start gap-3 2xl:gap-6 w-full py-6 sm:py-10 md:py-14 lg:py-16 xl:py-20 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 2xl:px-32 flex flex-col"
+            >
+              <div class="">
+                <img
+                  class="max-w-[150px] 2xl:max-w-[200px]"
+                  src="./assets/images/logo.svg"
+                  alt="logo"
+                />
+              </div>
+              <h1
+                class="font-openSans font-bold 2xl:text-[100px] lg:text-[72px] sm:text-[42px] text-[30px] -tracking-[0.05em] text-primary"
+              >
+                Family Support
+              </h1>
+        
+              <div class="max-w-2xl">
+                <span
+                  class="text-primary font-light font-openSans text-base md:text-xl xl:text-3xl 3xl:text-[45px] -tracking-[0.05em]"
+                  >We take care of your loved ones with care, compassion and dignity</span
+                >
+              </div>
+              <div class="mt-3 xl:mt-6 3xl:mt-10">
+                <img
+                  class="max-w-[150px] sm:max-w-[200px] md:max-w-[260px]"
+                  src="./assets/images/ndis.svg"
+                  alt="ndis image"
+                />
+              </div>
+            </div> -->
+          </div>
+        </section>
+        <section>
+          <div class="container pb-10 lg:pb-20">
+            <div class="flex flex-col gap-4 items-center text-center pb-10 lg:pb-16">
+              <div>
+                <span class="text-muted text-xxl">AUSDONE PERSONAL SUPPORT</span>
+              </div>
+              <div>
+                <span
+                  class="text-muted text-2xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold"
+                  >We offer a full range of services</span
+                >
+              </div>
+              <div>
+                <span class="text-muted text-base sm:text-lg md:text-xl lg:text-xxl"
+                  >We understand every family is different and we offer a full range to support you
+                  and your family. We have an amazing team of carers that are always happy to assit
+                  when needed.
+                </span>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-3 gap-x-8 gap-y-12">
+              <div
+                class="flex-1 flex lg:flex-row flex-col lg:items-stretch lg:gap-0 gap-4 text-left text-muted"
+              >
+                <div class="shrink-0">
+                  <img src="./assets/images/card_01.svg" alt="card-1" />
+                </div>
+                <div class="flex flex-col lg:ml-10 gap-2">
+                  <h3 class="text-2xl xs:text-3xl sm:text-4xl font-bold">Personal care</h3>
+                  <p class="text-lg xs:text-xl sm:text-2xl">
+                    Do you need help getting in and out of bed, bathing, or getting dressed and
+                    looking sharp? We can help support you throughout your day
+                  </p>
+                  <ul
+                    class="list-image-[url('./assets/images/ok.svg')] lg:ml-0 ml-7 text-left text-base sm:text-lg lg:text-xxl"
+                  >
+                    <li class="">Showering, bathing</li>
+                    <li>Hygine and grooming</li>
+                    <li>Podiatry, physio and other therapies</li>
+                    <li>Nursing, wound care & medications</li>
+                    <li>Help with impairments or continence</li>
+                    <li>Mobility & excersie assistance</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="flex-1 flex lg:flex-row flex-col lg:items-stretch lg:gap-0 gap-4 text-left text-muted"
+              >
+                <div class="shrink-0">
+                  <img src="./assets/images/card_03.svg" alt="card-1" />
+                </div>
+                <div class="flex flex-col lg:ml-10 gap-2">
+                  <h3 class="text-2xl xs:text-3xl sm:text-4xl font-bold">Household assitance</h3>
+                  <p class="text-lg xs:text-xl sm:text-2xl">
+                    We can do your household cores and help with many daily tasks or just provide
+                    companionship
+                  </p>
+                  <ul
+                    class="mt-auto list-image-[url('./assets/images/ok.svg')] lg:ml-0 ml-7 text-left text-base sm:text-lg lg:text-xxl"
+                  >
+                    <li class="">Cleaning, laundry & dishwashing</li>
+                    <li>Other household cores</li>
+                    <li>Home or garden maintenance</li>
+                    <li>Changes to home eg. ramps or hand rails</li>
+                    <li>Meals and food preperation</li>
+                    <li>TV, movies and games</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="flex-1 flex lg:flex-row flex-col lg:items-stretch text-left lg:gap-0 gap-4 text-muted"
+              >
+                <div class="shrink-0">
+                  <img src="./assets/images/card_02.svg" alt="card-1" />
+                </div>
+                <div class="flex flex-col lg:ml-10 gap-2">
+                  <h3 class="text-2xl xs:text-3xl sm:text-4xl font-bold">Transport & mobility</h3>
+                  <p class="text-lg xs:text-xl sm:text-2xl">
+                    All of our care givers have a drivers license and can assist in anyway they can
+                  </p>
+                  <ul
+                    class="mt-auto list-image-[url('./assets/images/ok.svg')] lg:ml-0 ml-7 text-left text-base sm:text-lg lg:text-xxl"
+                  >
+                    <li class="">Medical appointments</li>
+                    <li>Aids to stay independent</li>
+                    <li>Social outings, groups and hosting vistors</li>
+                    <li>Transport and taxi vouchers</li>
+                    <li>Help paying bills</li>
+                    <li>Grocery shopping and errans</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="bg-secondary-light pt-10 lg:pt-20 pb-10 lg:pb-20">
+          <div class="container">
+            <div class="flex flex-col gap-4 items-center text-center pb-10 lg:pb-16">
+              <div>
+                <span class="text-muted text-xxl">AUSDONE PERSONAL SUPPORT</span>
+              </div>
+              <div>
+                <span
+                  class="text-muted text-2xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold"
+                  >Find a carer that can support your needs</span
+                >
+              </div>
+              <div>
+                <span class="text-muted text-base sm:text-lg md:text-xl lg:text-xxl"
+                  >Our proffessional carers are all qualified and have the nessasry skills to help
+                  you or your loved one at home. Everyone is looking for different attributes when
+                  finding someone they can trust to enter their home.
+                </span>
+              </div>
+            </div>
+            <!-- cards container start -->
+            <div
+              x-data="cards"
+              class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-x-4 xl:gap-y-14 gap-y-7"
+            >
+              <template x-for="card in cards">
+                <div
+                  class="flex sm:flex-row flex-col gap-4 py-8 px-4 bg-white border-t-10 border-primary-muted"
+                >
+                  <div
+                    class="2xl:flex-[0_0_183px] flex-[0_0_100px] 2xl:min-w-auto min-w-[120px] flex flex-col sm:items-start items-center"
+                  >
+                    <div>
+                      <img :src="card.avatar_url" alt="avatar" />
+                    </div>
+                    <div class="2xl:my-7 my-4 flex-1">
+                      <div class="font-bold 2xl:text-lg text-sm -tracking-[0.01em] text-muted">
+                        Languages spoken <br />
+                        <div x-data="{lan: card.language_spoken.join(', ')}" class="">
+                          <span class="text-muted font-normal" x-text="lan"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="#"
+                      class="inline-flex items-center justify-center bg-primary-muted text-primary 2xl:min-w-[161px] min-w-full 2xl:text-lg text-base rounded-3xl h-11 font-semibold font-openSans hover:bg-primary hover:text-white transition-all"
+                      >Request</a
+                    >
+                  </div>
+                  <div class="flex-1">
+                    <h3
+                      class="font-openSans font-semibold 2xl:text-3xl text-xxl -tracking-wider text-muted mb-2"
+                      x-text="card.name"
+                    ></h3>
+                    <hr class="border-primary-muted my-2" />
+                    <p
+                      class="font-openSans 2xl:text-xxl text-base -tracking-[0.01em] text-muted mb-4 2xl:min-h-[113px] lg:min-h-[80px]"
+                      x-text="card.description"
+                    ></p>
+                    <ul class="list-image-[url('./assets/images/ok.svg')] list-inside">
+                      <template x-for="item in card.verified">
+                        <li
+                          class="font-semibold 2xl:text-lg text-base -tracking-[0.01em] text-muted"
+                          x-text="item"
+                        ></li>
+                      </template>
+                    </ul>
+
+                    <ul class="flex items-center gap-4 2xl:pl-9 pl-6 mt-2">
+                      <template x-for="el in card.else">
+                        <li x-data="{src: './assets/images/' + el + '.svg'}">
+                          <img x-bind:src="src" alt="icon" />
+                        </li>
+                      </template>
+                    </ul>
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div class="my-20 flex justify-start items-center">
+              <a
+                href="#"
+                class="text-purple underline text-xxl block mx-auto transition-colors hover:text-purple/70 w-fit"
+                >Show More...</a
+              >
+            </div>
+            <!-- cards container end -->
+          </div>
+        </section>
+        <section class="bg-white relative flex-col">
+          <div class="2xl:absolute inset-0 flex justify-center items-center">
+            <div class="max-w-3xl text-center 2xl:translate-x-1/3 py-20 px-4">
+              <div
+                class="text-muted font-bold text-2xl xs:text-3xl sm:text-5xl xl:text-6xl 2xl:text-7xl"
+              >
+                <span>NDIS Carers Available when you need them</span>
+              </div>
+              <div class="text-muted text-base xs:text-xl text-2xl lg:text-3xl">
+                <span
+                  >Our proffessional carers are all qualified and have the nessasry skills to help
+                  you or your loved one at home.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <img src="./assets/images/slider2.png" alt="slider" />
+          </div>
+        </section>
+      </main>
+      <!-- main end -->
+      <!-- footer start -->
+      <footer class="relative">
+        <img
+          class="absolute w-full h-full object-cover brightness-25"
+          src="./assets/images/footerbg-1.png"
+          alt=""
+        />
+        <div class="lg:container mx-auto px-4 relative py-10">
+          <div class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 2xl:gap-24 gap-8">
+            <div>
+              <div class="sm:min-h-10">
+                <a href="#"
+                  ><img src="./assets/images/logo-white.svg" alt="" class="sm:h-auto h-6"
+                /></a>
+              </div>
+              <div>
+                <span class="inline-block h-1 w-24 bg-primary"></span>
+              </div>
+              <p
+                class="font-openSans 2xl:text-xl sm:text-base text-sm text-white max-w-xs sm:mt-8 mt-4 sm:mb-12 mb-6"
+              >
+                Ausdone cares for your family like it is our own. We will always treat our clients
+                with respect and understanding.
+              </p>
+              <img src="./assets/images/ndis-white.svg" alt="" />
+            </div>
+            <div>
+              <h3
+                class="font-bold font-openSans sm:leading-[39px] leading-[26px] sm:text-3xl text-xxl text-white"
+              >
+                Contact
+              </h3>
+              <span class="inline-block h-1 w-[100px] bg-primary"></span>
+              <div class="flex items-start mt-6 gap-2">
+                <img class="mt-[0.5em] w-4" src="./assets/images/pin.svg" alt="" />
+                <div class="flex-1">
+                  <p class="2xl:text-xl sm:text-base text-sm text-white">
+                    123 Smith Street <br />
+                    Sydney NSW 2001
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start mt-6 gap-2">
+                <img class="mt-[0.5em] w-4" src="./assets/images/email.svg" alt="" />
+
+                <div class="flex-1">
+                  <p class="2xl:text-[19px] sm:text-base text-sm text-white">
+                    info@ausdone.com.au1
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start mt-6 gap-2">
+                <img class="mt-[0.5em] w-4" src="./assets/images/phone.svg" alt="" />
+                <div class="">
+                  <p class="2xl:text-xl sm:text-base text-sm text-white">
+                    (02) 9878 4433 (9am-5pm)
+                    <br />
+                    0410 567 443 (After Hours)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="font-bold font-openSans sm:leading-[39px] leading-[26px] sm:text-3xl text-xxl text-white"
+              >
+                Work for us
+              </h3>
+              <span class="inline-block h-1 w-[100px] bg-primary"></span>
+              <p class="2xl:text-xl sm:text-base text-sm text-white sm:my-6 my-4">
+                We are always looking for quality candidates to join our caring team. Please apply
+                if you have the following
+              </p>
+              <ul>
+                <li class="flex items-center gap-3 my-2">
+                  <i>
+                    <img src="./assets/images/ok-white.svg" alt="" />
+                  </i>
+                  <p class="2xl:text-xl sm:text-base text-base text-white flex-1">
+                    Certificate III &amp; IV Home Care
+                  </p>
+                </li>
+                <li class="flex items-center gap-3 my-2">
+                  <i>
+                    <img src="./assets/images/ok-white.svg" alt="" />
+                  </i>
+                  <p class="2xl:text-xl sm:text-base text-sm text-white flex-1">Drivers Licence</p>
+                </li>
+                <li class="flex items-center gap-3 my-2">
+                  <i>
+                    <img src="./assets/images/ok-white.svg" alt="" />
+                  </i>
+                  <p class="2xl:text-xl sm:text-base text-sm text-white flex-1">
+                    Checkable Refrences
+                  </p>
+                </li>
+                <li class="flex items-center gap-[13px] my-[7px]">
+                  <i>
+                    <img src="./assets/images/ok-white.svg" alt="" />
+                  </i>
+                  <p class="2xl:text-xl sm:text-base text-sm text-white flex-1">
+                    Positive Attitude
+                  </p>
+                </li>
+                <li class="mt-4">
+                  <a href="#" class="inline-flex items-center gap-3 underline text-[#D6D02F]">
+                    <i>
+                      <img src="./assets/images/chevrone-right.svg" alt="" />
+                    </i>
+                    <span>Apply Here</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="font-bold font-openSans sm:leading-[39px] leading-[26px] sm:text-3xl text-xxl text-white"
+              >
+                Subscribe
+              </h3>
+              <span class="inline-block h-[4px] w-[100px] bg-primary"></span>
+              <p class="2xl:text-xl sm:text-base text-sm text-white sm:my-6 my-4">
+                Join our newsletter to stay up to date with the latest NDIS information
+              </p>
+
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <input
+                    type="text"
+                    class="w-full rounded-lg sm:h-14 h-10 px-4 py-2 2xl:text-xl sm:text-base text-sm ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                    placeholder="Email  Address"
+                  />
+                </div>
+                <button
+                  class="p-3 h-10 sm:h-14 aspect-square border border-muted rounded-lg transition-all hover:bg-primary shrink-0 flex justify-center items-center"
+                >
+                  <img src="./assets/images/email.svg" alt="" class="sm:h-6 h-4" />
+                </button>
+              </div>
+
+              <p class="2xl:text-xl sm:text-base text-sm text-white my-6">
+                We will never share or sell your email address
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- footer end -->
+    </div>
+    <script>
+      const cards = [
+        {
+          id: 1,
+          name: "Wendy Chow",
+          language_spoken: ["Cantonese", "Mandarin"],
+          description: `Wendy is studing to become a nurse and has 10+ years experience in aged care`,
+          avatar_url: "./assets/images/avatar_01.svg",
+          verified: [
+            "Certificate III",
+            "Certificate IV",
+            "Drivers license",
+            "Police check",
+            "Work with children check",
+          ],
+          else: ["spoon", "car", "degree"],
+        },
+        {
+          id: 2,
+          name: "Carrie Chen",
+          language_spoken: ["English", "Mandarin", "Fuzhou Dilect"],
+          description: `Carrie is a qualifed nurse and enjoys cooking and chatting`,
+          avatar_url: "./assets/images/avatar_02.svg",
+          verified: [
+            "Certificate III",
+            "Certificate IV",
+            "Drivers license",
+            "Police check",
+            "Work with children check",
+          ],
+          else: ["spoon", "car", "degree", "health"],
+        },
+        {
+          id: 3,
+          name: "Erin Johnson",
+          language_spoken: ["English", "Russian"],
+          description: `Erin has over 20 year expirence in home care.`,
+          avatar_url: "./assets/images/avatar_03.svg",
+
+          verified: [
+            "Certificate III",
+            "Certificate IV",
+            "Drivers license",
+            "Police check",
+            "Work with children check",
+          ],
+          else: ["spoon", "car", "degree", "health"],
+        },
+        {
+          id: 4,
+          name: "July Zhou",
+          language_spoken: ["English", "Malaysian", "Mandarin"],
+          description: `July has 5+ years as a care worker and like to cook. She also loves dogs`,
+          avatar_url: "./assets/images/avatar_04.svg",
+
+          verified: [
+            "Certificate III",
+            "Certificate IV",
+            "Drivers license",
+            "Police check",
+            "Work with children check",
+          ],
+          else: ["spoon", "car", "degree", "health"],
+        },
+        {
+          id: 5,
+          name: "Anthony Rebortson",
+          language_spoken: ["English", "Portugese", "Spanish"],
+          description: `Anthony likes fixing things around the house and also likes watching movies`,
+          avatar_url: "./assets/images/avatar_05.svg",
+
+          verified: [
+            "Certificate III",
+            "Certificate IV",
+            "Drivers license",
+            "Police check",
+            "Work with children check",
+          ],
+          else: ["spoon", "car", "degree"],
+        },
+        {
+          id: 6,
+          name: "Brian Galang",
+          language_spoken: ["English", "Indonesian"],
+          description: `Brian is a a hard worker and like to do repairs around the house and gardening`,
+          avatar_url: "./assets/images/avatar_06.svg",
+
+          verified: [
+            "Certificate III",
+            "Certificate IV",
+            "Drivers license",
+            "Police check",
+            "Work with children check",
+          ],
+          else: ["spoon", "car", "degree"],
+        },
+      ];
+    </script>
+  </body>
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ausdone</title>
+    <link rel="stylesheet" href="../output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body>
+    <div class="font-openSans">
+      <!-- header start -->
+      <header class="flex flex-col shadow-lg">
+        <div
+          class="bg-primary font-openSans 2xl:text-xxl lg:text-lg sm:text-sm px-4 text-xs text-white h-14 text-center uppercase flex justify-center items-center"
+        >
+          <div>
+            <span>TALK TO OUR FRIENDLY STAFF TO ARRANGE A CARER FOR YOUR LOVED ONE</span>
+            <span class="font-bold">CALL (02) 9876 3456</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between container py-5 gap-2 2xl:gap-5">
+          <a href="../index.html">
+            <img
+              class="max-w-[150px] 2xl:max-w-[200px]"
+              src="../assets/images/logo.svg"
+              alt="logo"
+            />
+          </a>
+          <div
+            class="xl:flex hidden items-center justify-evenly lg:text-base 3xl:text-xl text-black w-full font-HelveticaNeue font-normal"
+          >
+            <a class="hover:text-primary transition-colors" href="#">Our Services</a>
+            <a class="hover:text-primary transition-colors" href="#">Request a Carer</a>
+            <a class="hover:text-primary transition-colors" href="#">NDIS Provider</a>
+            <a class="hover:text-primary transition-colors" href="./looking_for_work.html"
+              >Looking for Work</a
+            >
+            <a class="hover:text-primary transition-colors" href="#">About Us</a>
+            <a class="hover:text-primary transition-colors" href="#">Contact</a>
+          </div>
+          <div class="xl:flex hidden gap-4 items-center font-HelveticaNeue">
+            <button
+              class="2xl:px-5 px-3 py-1 text-base 2xl:text-xl bg-primary hover:bg-primary-muted hover:text-primary transition-colors font-normal text-white whitespace-nowrap rounded-full"
+            >
+              <span>Looking for Work</span>
+            </button>
+            <button
+              class="2xl:px-5 px-3 py-1 text-base 2xl:text-xl bg-purple hover:bg-purple/30 hover:text-purple transition-colors font-normal text-white whitespace-nowrap rounded-full"
+            >
+              <span>Looking Carers</span>
+            </button>
+          </div>
+          <!-- burger -->
+          <div x-data="{ open: false }" class="xl:hidden flex">
+            <div x-on:click="open = ! open" class="flex flex-col w-6 h-6 justify-around">
+              <span class="h-0.5 w-full bg-black rounded-full"></span>
+              <span class="h-0.5 w-full bg-black rounded-full"></span>
+              <span class="h-0.5 w-full bg-black rounded-full"></span>
+            </div>
+            <div>
+              <div
+                x-on:click="open = ! open"
+                x-show="open"
+                x-transition:enter="transition linier duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition linier duration-300"
+                x-transition:leave-start="opacity-100 "
+                x-transition:leave-end="opacity-0"
+                class="fixed bg-black/30 z-40 inset-0"
+              ></div>
+              <div
+                x-show="open"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 translate-x-full"
+                x-transition:enter-end="opacity-100 translate-x-0"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 translate-x-0"
+                x-transition:leave-end="opacity-0 translate-x-full"
+                class="fixed h-full max-w-lg w-full top-0 right-0 bg-white z-50 flex flex-col py-4 px-5"
+              >
+                <div x-on:click="open = !open" class="self-end flex flex-col relative w-6 h-6">
+                  <span
+                    class="h-0.5 w-full bg-black rounded-full absolute top-1/2 -translate-y-1/2 rotate-45"
+                  ></span>
+                  <span
+                    class="h-0.5 w-full bg-black rounded-full absolute top-1/2 -translate-y-1/2 -rotate-45"
+                  ></span>
+                </div>
+                <ul class="flex flex-col items-start">
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >Our Services</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >Request a Carer</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >NDIS Provider</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >Looking for Work</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >About Us</a
+                    >
+                  </li>
+                  <li class="w-full">
+                    <a
+                      class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
+                      href="#"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+                <div class="flex flex-col gap-4 py-4">
+                  <button
+                    class="bg-primary hover:bg-primary-muted py-2 text-white transition-colors rounded-full w-full text-whote"
+                  >
+                    <span>Looking for Work</span>
+                  </button>
+                  <button
+                    class="bg-purple hover:bg-purple/30 py-2 text-white rounded-full w-full text-whote transition-colors"
+                  >
+                    <span>Looking for Work</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
+          <!-- burger -->
+        </div>
+      </header>
+      <!-- header end -->
+      <!-- main start -->
+      <main>
+        <div class="container p-0">
+          <div class="flex flex-1 justify-between px-0 xs:px-4 sm:px-6 md:px-10">
+            <div class="bg-secondary-light w-full pr-4 pl-4 md:pl-20 pb-24">
+              <div class="max-w-2xl w-full">
+                <div class="flex text-primary text-lg xs:text-xl md:text-xxl py-10">
+                  <span><span class="underline">Home</span> > Create a Booking Request</span>
+                </div>
+                <div class="text-muted mb-10 lg:mb-20">
+                  <div class="mb-4">
+                    <span class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold"
+                      >Create a Booking Request</span
+                    >
+                  </div>
+                  <div>
+                    <span class="text-base md:text-lg"
+                      >Complete the form and we will contact you within a few hours with suitable
+                      carers. You can always call us on (02) 9878 3322 as well
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <form action="#" class="flex flex-col gap-6 md:gap-10 w-full">
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl" for="name"
+                      ><span class="mr-5"
+                        >Name of Person
+                        <sup>
+                          <span class="text-red-500">*</span>
+                        </sup></span
+                      >
+                      <span class="text-base font-normal md:text-lg inline-block"
+                        >The person we will be assisting</span
+                      >
+                    </label>
+                    <input
+                      class="bg-white border border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      id="name"
+                      type="text"
+                      name="name"
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div class="max-w-xs w-full">
+                    <span class="text-red-500">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl" for="email"
+                      ><span class="mr-5">
+                        Your Email Address
+                        <sup>
+                          <span class="text-red-500">*</span>
+                        </sup>
+                      </span>
+                      <span class="text-base font-normal md:text-lg inline-block"
+                        >To send details of the booking</span
+                      >
+                    </label>
+                    <input
+                      class="bg-white border border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      id="email"
+                      type="text"
+                      name="email"
+                      autocomplete="email"
+                    />
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl" for="tel">
+                      <span class="mr-5">
+                        Your Phone Number
+                        <sup>
+                          <span class="text-red-500">*</span>
+                        </sup>
+                      </span>
+                      <span class="text-base font-normal md:text-lg inline-block"
+                        >To call if any extra question we may have</span
+                      >
+                    </label>
+                    <input
+                      class="bg-white border border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      id="tel"
+                      type="text"
+                      name="tel"
+                      autocomplete="tel"
+                    />
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl" for="address">
+                      <span class="mr-5">
+                        Address
+                        <sup>
+                          <span class="text-red-500">*</span>
+                        </sup>
+                      </span>
+                      <span class="text-base font-normal md:text-lg inline-block"
+                        >The location the carer will travel to</span
+                      >
+                    </label>
+                    <input
+                      class="bg-white border border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      id="address"
+                      type="text"
+                      name="address"
+                      autocomplete="address-level1"
+                    />
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl" for="description"
+                      >Description of assistance needed
+                      <sup>
+                        <span class="text-red-500">*</span>
+                      </sup>
+                    </label>
+                    <textarea
+                      class="bg-white border resize-none border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      id="description"
+                      rows="10"
+                    ></textarea>
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label
+                      class="text-muted text-xl font-bold md:text-2xl"
+                      for="prefered-data-and-time"
+                      >Prefered Date & Time
+                    </label>
+                    <input
+                      class="bg-white border border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      id="prefered-data-and-time"
+                      type="date"
+                    />
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl" for="prefered-gender"
+                      >Prefered Gender
+                    </label>
+                    <select
+                      class="bg-white border border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      name="gender"
+                      id="prefered-gender"
+                    >
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl" for="skills-required"
+                      >Skills Required
+                    </label>
+                    <select
+                      class="bg-white border border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      name="gender"
+                      id="skills-required"
+                    >
+                      <option value="HTML">HTML</option>
+                      <option value="CSS">CSS</option>
+                    </select>
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl" for="skills-required"
+                      >Qualifications Required
+                    </label>
+                    <select
+                      class="bg-white border border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      name="gender"
+                      id="skills-required"
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                    </select>
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl" for="language-required"
+                      >Languages Required
+                    </label>
+                    <select
+                      class="bg-white border border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      name="gender"
+                      id="language-required"
+                    >
+                      <option value="english">English</option>
+                      <option value="Spanish">Spanish</option>
+                    </select>
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label class="text-muted text-xl font-bold md:text-2xl mb-5" for=""
+                      >Extras Required
+                    </label>
+                    <div class="grid grid-cols-2 gap-7">
+                      <div class="flex gap-2">
+                        <label
+                          class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none"
+                          for="police-check"
+                        >
+                          <input class="hidden peer" type="checkbox" name="" id="police-check" />
+                          <div class="w-5/6 peer-checked:block hidden">
+                            <img class="object-contain" src="../assets/images/ok-gray.svg" alt="" />
+                          </div>
+                        </label>
+                        <label class="text-muted text-lg sm:text-xl md:text-xxl" for="police-check"
+                          >Police Check</label
+                        >
+                      </div>
+                      <div class="flex gap-2">
+                        <label
+                          class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none"
+                          for="work-with-children-check"
+                        >
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            name=""
+                            id="work-with-children-check"
+                          />
+                          <div class="w-5/6 peer-checked:block hidden">
+                            <img class="object-contain" src="../assets/images/ok-gray.svg" alt="" />
+                          </div>
+                        </label>
+                        <label
+                          class="text-muted text-lg sm:text-xl md:text-xxl"
+                          for="work-with-children-check"
+                          >Work with Children Check</label
+                        >
+                      </div>
+                      <div class="flex gap-2">
+                        <label
+                          class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none"
+                          for="drivers-licence"
+                        >
+                          <input class="hidden peer" type="checkbox" name="" id="drivers-licence" />
+                          <div class="w-5/6 peer-checked:block hidden">
+                            <img class="object-contain" src="../assets/images/ok-gray.svg" alt="" />
+                          </div>
+                        </label>
+                        <label
+                          class="text-muted text-lg sm:text-xl md:text-xxl"
+                          for="drivers-licence"
+                          >Drivers Licence</label
+                        >
+                      </div>
+                      <div class="flex gap-2">
+                        <label
+                          class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none"
+                          for="abn"
+                        >
+                          <input class="hidden peer" type="checkbox" name="" id="abn" />
+                          <div class="w-5/6 peer-checked:block hidden">
+                            <img class="object-contain" src="../assets/images/ok-gray.svg" alt="" />
+                          </div>
+                        </label>
+                        <label class="text-muted text-lg sm:text-xl md:text-xxl" for="abn"
+                          >ABN</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="w-full flex md:flex-row flex-col gap-5 items-end">
+                  <div class="flex flex-col w-full gap-1 max-w-2xl">
+                    <label
+                      class="text-muted text-xl font-bold md:text-2xl"
+                      for="description-of-assistance"
+                      ><span class="mr-5">
+                        Description of assistance needed
+                        <sup>
+                          <span class="text-red-500">*</span>
+                        </sup>
+                      </span>
+                      <span class="text-base font-normal md:text-lg inline-block"
+                        >Include any special notes.</span
+                      >
+                    </label>
+                    <textarea
+                      class="bg-white border resize-none border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                      id="description-of-assistance"
+                      placeholder="eg. must love dogs pr needs to be strong to help lift mum."
+                      rows="10"
+                    ></textarea>
+                  </div>
+                  <div>
+                    <span class="text-red-500 hidden">Missing Name of person</span>
+                  </div>
+                </div>
+                <div class="max-w-2xl w-full justify-end flex">
+                  <button
+                    type="submit"
+                    class="inline-flex w-fit self-end items-center justify-center bg-primary-muted text-primary 2xl:min-w-[161px] min-w-full 2xl:text-lg text-base rounded-3xl h-11 font-semibold font-openSans hover:bg-primary hover:text-white transition-all"
+                  >
+                    Submit Request
+                  </button>
+                </div>
+              </form>
+              <div
+                class="flex justify-center items-center text-center py-10 max-w-2xl w-full text-primary flex-col"
+              >
+                <p>Thank you.</p>
+                <p>We will be in contact with you within a few hours if (during business hours)</p>
+              </div>
+            </div>
+            <div
+              class="bg-secondary lg:block hidden lg:max-w-60 xl:max-w-xs 2xl:max-w-sm w-full"
+            ></div>
+          </div>
+        </div>
+      </main>
+      <!-- main end -->
+      <!-- footer start -->
+      <footer class="relative">
+        <img
+          class="absolute w-full h-full object-cover brightness-25"
+          src="../assets/images/footerbg-1.png"
+          alt=""
+        />
+        <div class="lg:container mx-auto px-4 relative py-10">
+          <div class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 2xl:gap-24 gap-8">
+            <div>
+              <div class="sm:min-h-10">
+                <a href="#"
+                  ><img src="../assets/images/logo-white.svg" alt="" class="sm:h-auto h-6"
+                /></a>
+              </div>
+              <div>
+                <span class="inline-block h-1 w-24 bg-primary"></span>
+              </div>
+              <p
+                class="font-openSans 2xl:text-xl sm:text-base text-sm text-white max-w-xs sm:mt-8 mt-4 sm:mb-12 mb-6"
+              >
+                Ausdone cares for your family like it is our own. We will always treat our clients
+                with respect and understanding.
+              </p>
+              <img src="../assets/images/ndis-white.svg" alt="" />
+            </div>
+            <div>
+              <h3
+                class="font-bold font-openSans sm:leading-[39px] leading-[26px] sm:text-3xl text-xxl text-white"
+              >
+                Contact
+              </h3>
+              <span class="inline-block h-1 w-[100px] bg-primary"></span>
+              <div class="flex items-start mt-6 gap-2">
+                <img class="mt-[0.5em] w-4" src="../assets/images/pin.svg" alt="" />
+                <div class="flex-1">
+                  <p class="2xl:text-xl sm:text-base text-sm text-white">
+                    123 Smith Street <br />
+                    Sydney NSW 2001
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start mt-6 gap-2">
+                <img class="mt-[0.5em] w-4" src="../assets/images/email.svg" alt="" />
+
+                <div class="flex-1">
+                  <p class="2xl:text-[19px] sm:text-base text-sm text-white">
+                    info@ausdone.com.au1
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start mt-6 gap-2">
+                <img class="mt-[0.5em] w-4" src="../assets/images/phone.svg" alt="" />
+                <div class="">
+                  <p class="2xl:text-xl sm:text-base text-sm text-white">
+                    (02) 9878 4433 (9am-5pm)
+                    <br />
+                    0410 567 443 (After Hours)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3
+                class="font-bold font-openSans sm:leading-[39px] leading-[26px] sm:text-3xl text-xxl text-white"
+              >
+                Work for us
+              </h3>
+              <span class="inline-block h-1 w-[100px] bg-primary"></span>
+              <p class="2xl:text-xl sm:text-base text-sm text-white sm:my-6 my-4">
+                We are always looking for quality candidates to join our caring team. Please apply
+                if you have the following
+              </p>
+              <ul>
+                <li class="flex items-center gap-3 my-2">
+                  <i>
+                    <img src="../assets/images/ok-white.svg" alt="" />
+                  </i>
+                  <p class="2xl:text-xl sm:text-base text-base text-white flex-1">
+                    Certificate III &amp; IV Home Care
+                  </p>
+                </li>
+                <li class="flex items-center gap-3 my-2">
+                  <i>
+                    <img src="../assets/images/ok-white.svg" alt="" />
+                  </i>
+                  <p class="2xl:text-xl sm:text-base text-sm text-white flex-1">Drivers Licence</p>
+                </li>
+                <li class="flex items-center gap-3 my-2">
+                  <i>
+                    <img src="../assets/images/ok-white.svg" alt="" />
+                  </i>
+                  <p class="2xl:text-xl sm:text-base text-sm text-white flex-1">
+                    Checkable Refrences
+                  </p>
+                </li>
+                <li class="flex items-center gap-[13px] my-[7px]">
+                  <i>
+                    <img src="../assets/images/ok-white.svg" alt="" />
+                  </i>
+                  <p class="2xl:text-xl sm:text-base text-sm text-white flex-1">
+                    Positive Attitude
+                  </p>
+                </li>
+                <li class="mt-4">
+                  <a href="#" class="inline-flex items-center gap-3 underline text-[#D6D02F]">
+                    <i>
+                      <img src="../assets/images/chevrone-right.svg" alt="" />
+                    </i>
+                    <span>Apply Here</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="font-bold font-openSans sm:leading-[39px] leading-[26px] sm:text-3xl text-xxl text-white"
+              >
+                Subscribe
+              </h3>
+              <span class="inline-block h-[4px] w-[100px] bg-primary"></span>
+              <p class="2xl:text-xl sm:text-base text-sm text-white sm:my-6 my-4">
+                Join our newsletter to stay up to date with the latest NDIS information
+              </p>
+
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <input
+                    type="text"
+                    class="w-full rounded-lg sm:h-14 h-10 px-4 py-2 2xl:text-xl sm:text-base text-sm ring-primary focus:ring-primary focus:outline-1 outline-primary"
+                    placeholder="Email  Address"
+                  />
+                </div>
+                <button
+                  class="p-3 h-10 sm:h-14 aspect-square border border-muted rounded-lg transition-all hover:bg-primary shrink-0 flex justify-center items-center"
+                >
+                  <img src="../assets/images/email.svg" alt="" class="sm:h-6 h-4" />
+                </button>
+              </div>
+
+              <p class="2xl:text-xl sm:text-base text-sm text-white my-6">
+                We will never share or sell your email address
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- footer end -->
+    </div>
+  </body>
+</html>

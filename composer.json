@@ -4,13 +4,18 @@
     "require": {
         "acclaro/translations": "v3.3.2",
         "craftcms/cms": "^4.4.0",
+        "craftcms/commerce": "4.4.1.1",
         "craftcms/feed-me": "5.3.0",
         "craftcms/generator": "^1.3.0",
         "craftcms/webhooks": "3.0.5",
+        "craftquest/buggy": "2.0.0",
         "craftsnippets/craft-image-toolbox": "2.2.3",
-        "craftyfm/feedme-filemaker": "^1.0.0-beta",
+        "craftyfm/craft-feedme-filemaker": "^1.0@beta",
+        "craftyfm/craft-formie-filemaker": "dev-main",
+        "craftyfm/craft-webhooks-filemaker": "dev-main",
         "doublesecretagency/craft-cpcss": "2.6.0",
         "mmikkel/cp-field-inspect": "1.4.4",
+        "verbb/field-manager": "3.0.8",
         "verbb/formie": "2.0.43",
         "verbb/navigation": "2.0.22",
         "vlucas/phpdotenv": "^5.4.0"
@@ -49,7 +54,14 @@
         {
             "type": "path",
             "url": "plugins/feedme-filemaker"
+        },
+        {
+            "type": "path",
+            "url": "plugins/webhooks-filemaker"
+        },
+        {
+            "type": "path",
+            "url": "plugins/formie-filemaker"
         }
     ]
 }
-
