@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e861556ceb97f33718b0c2a04c0e7e82",
+    "content-hash": "66c55f1b2d96be1f6279e9e5d4410825",
     "packages": [
         {
             "name": "acclaro/translations",
@@ -681,11 +681,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.6.0",
+            "version": "4.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/4d5f71c154cd2e01cfd771e55ed43703a59cf844",
-                "reference": "4d5f71c154cd2e01cfd771e55ed43703a59cf844",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/17164e79c7b3e86534491ff7687129cc1db79386",
+                "reference": "17164e79c7b3e86534491ff7687129cc1db79386",
                 "shasum": ""
             },
             "require": {
@@ -773,7 +773,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-01-09T17:57:33+00:00"
+            "time": "2024-01-23T18:59:37+00:00"
         },
         {
             "name": "craftcms/commerce",
@@ -933,6 +933,43 @@
             "time": "2023-08-11T01:27:27+00:00"
         },
         {
+            "name": "craftcms/html-field",
+            "version": "2.0.8",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/html-field/zipball/4797c9cb0397e6d69d25d9716a75f7b47c69fd3a",
+                "reference": "4797c9cb0397e6d69d25d9716a75f7b47c69fd3a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "craft\\htmlfield\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Base class for Craft CMS field types with HTML values.",
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/html-field/issues?state=open",
+                "source": "https://github.com/craftcms/html-field",
+                "docs": "https://github.com/craftcms/html-field/blob/main/README.md",
+                "rss": "https://github.com/craftcms/html-field/commits/main.atom"
+            },
+            "time": "2023-09-17T11:24:51+00:00"
+        },
+        {
             "name": "craftcms/plugin-installer",
             "version": "1.6.0",
             "dist": {
@@ -969,12 +1006,63 @@
             "time": "2023-02-22T13:17:00+00:00"
         },
         {
-            "name": "craftcms/server-check",
-            "version": "2.1.7",
+            "name": "craftcms/redactor",
+            "version": "3.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/server-check/zipball/97c09a55cee207cb0a79243606354d9783d693d8",
-                "reference": "97c09a55cee207cb0a79243606354d9783d693d8",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/3e71faf0f129025d8814207e496870ce6deeef01",
+                "reference": "3e71faf0f129025d8814207e496870ce6deeef01",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0-alpha.1",
+                "craftcms/html-field": "^2.0.0",
+                "php": "^8.0.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Redactor",
+                "handle": "redactor",
+                "documentationUrl": "https://github.com/craftcms/redactor/blob/v2/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\redactor\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Edit rich text content in Craft CMS using Redactor by Imperavi.",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "html",
+                "redactor",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/redactor/issues?state=open",
+                "source": "https://github.com/craftcms/redactor",
+                "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
+                "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
+            },
+            "time": "2023-03-16T23:00:48+00:00"
+        },
+        {
+            "name": "craftcms/server-check",
+            "version": "2.1.8",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/server-check/zipball/c86e8aeabc73333111e2bfb4483d7b5402232e48",
+                "reference": "c86e8aeabc73333111e2bfb4483d7b5402232e48",
                 "shasum": ""
             },
             "type": "library",
@@ -994,7 +1082,7 @@
                 "requirements",
                 "yii2"
             ],
-            "time": "2023-09-20T01:56:57+00:00"
+            "time": "2023-09-25T17:28:37+00:00"
         },
         {
             "name": "craftcms/webhooks",
@@ -1157,150 +1245,56 @@
             "time": "2023-07-18T19:29:36+00:00"
         },
         {
-            "name": "craftyfm/craft-feedme-filemaker",
-            "version": "1.0.1",
+            "name": "craftsnippets/static-file-manager",
+            "version": "2.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/trade74/feedme-filemaker/zipball/adb9faa12074a15fff929879a94c104594793651",
-                "reference": "adb9faa12074a15fff929879a94c104594793651",
+                "url": "https://api.github.com/repos/craft-snippets/Craft-static-file-manager/zipball/c4f046ba9eff4ad31b2e0e5481ecda92cbe2b693",
+                "reference": "c4f046ba9eff4ad31b2e0e5481ecda92cbe2b693",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^4.5.0",
-                "php": ">=8.0.2"
+                "craftcms/cms": "^4.0.0"
             },
             "type": "craft-plugin",
             "extra": {
-                "handle": "feedme-filemaker",
-                "name": "Feed Me Filemaker",
-                "developer": "CraftyFm",
-                "documentationUrl": "",
-                "class": "craftyfm\\craftfeedmefilemaker\\FeedmeFilemaker"
+                "name": "Static file manager",
+                "handle": "static-file-manager",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://github.com/craft-snippets/Craft-static-file-manager/blob/master/CHANGELOG.md",
+                "components": {
+                    "staticFileManagerService": "craftsnippets\\staticfilemanager\\services\\StaticFileManagerService"
+                },
+                "class": "craftsnippets\\staticfilemanager\\StaticFileManager"
             },
             "autoload": {
                 "psr-4": {
-                    "craftyfm\\craftfeedmefilemaker\\": "src/"
+                    "craftsnippets\\staticfilemanager\\": "src/"
                 }
             },
             "license": [
-                "proprietary"
+                "MIT"
             ],
-            "description": "A plugin to allow Claris Filemaker Data API v2 to work with the Feed Me plugin",
+            "authors": [
+                {
+                    "name": "Piotr Pogorzelski",
+                    "homepage": "http://craftsnippets.com"
+                }
+            ],
+            "description": "Keep your static files list in PHP configuration file.",
             "keywords": [
-                "claris",
                 "cms",
                 "craft",
                 "craft-plugin",
                 "craftcms",
-                "feed me",
-                "filemaker"
+                "static file manager"
             ],
             "support": {
-                "email": "stuart@x2network.net"
+                "docs": "https://github.com/craft-snippets/Craft-static-file-manager/blob/master/README.md",
+                "issues": "https://github.com/craft-snippets/Craft-static-file-manager/issues"
             },
-            "time": "2024-01-10T06:24:26+00:00"
-        },
-        {
-            "name": "craftyfm/craft-formie-filemaker",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "plugins/formie-filemaker",
-                "reference": "804132d188c78fb51ba749206c32f0c89aac5ee3"
-            },
-            "require": {
-                "craftcms/cms": "^4.6.0",
-                "php": ">=8.0.2"
-            },
-            "require-dev": {
-                "craftcms/ecs": "dev-main",
-                "craftcms/phpstan": "dev-main"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "handle": "formie-filemaker",
-                "name": "formie-filemaker",
-                "developer": "Craftyfm",
-                "documentationUrl": "",
-                "class": "craftyfm\\craftformiefilemaker\\FormieFilemaker"
-            },
-            "autoload": {
-                "psr-4": {
-                    "craftyfm\\craftformiefilemaker\\": "src/"
-                }
-            },
-            "scripts": {
-                "check-cs": [
-                    "ecs check --ansi"
-                ],
-                "fix-cs": [
-                    "ecs check --ansi --fix"
-                ],
-                "phpstan": [
-                    "phpstan --memory-limit=1G"
-                ]
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "Send form data from Formie to Filemaker Data API v2 via a Webhook",
-            "support": {
-                "email": "stuart@x2network.net"
-            },
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "craftyfm/craft-webhooks-filemaker",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "plugins/webhooks-filemaker",
-                "reference": "e117fec06f7068cf52447ed562ccb6a745a620b1"
-            },
-            "require": {
-                "craftcms/cms": "^4.6.0",
-                "php": ">=8.0.2"
-            },
-            "require-dev": {
-                "craftcms/ecs": "dev-main",
-                "craftcms/phpstan": "dev-main"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "handle": "webhooks-filemaker",
-                "name": "webhooks-filemaker",
-                "developer": "Craftyfm",
-                "documentationUrl": "",
-                "class": "craftyfm\\craftwebhooksfilemaker\\WebhooksFilemaker"
-            },
-            "autoload": {
-                "psr-4": {
-                    "craftyfm\\craftwebhooksfilemaker\\": "src/"
-                }
-            },
-            "scripts": {
-                "check-cs": [
-                    "ecs check --ansi"
-                ],
-                "fix-cs": [
-                    "ecs check --ansi --fix"
-                ],
-                "phpstan": [
-                    "phpstan --memory-limit=1G"
-                ]
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "send webhooks to Filemaker",
-            "support": {
-                "email": "stuart@x2network.net"
-            },
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2022-05-28T18:34:11+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -1862,11 +1856,11 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.13.27",
+            "version": "8.13.28",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/033bea996defd39bddca9de22b9e9dbda419431c",
-                "reference": "033bea996defd39bddca9de22b9e9dbda419431c",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/f508ab946a60c1470c92e33cfc0393a0d580b9a1",
+                "reference": "f508ab946a60c1470c92e33cfc0393a0d580b9a1",
                 "shasum": ""
             },
             "require": {
@@ -1911,7 +1905,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2023-12-19T08:19:08+00:00"
+            "time": "2024-01-17T08:09:20+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -1984,11 +1978,11 @@
         },
         {
             "name": "google/cloud-core",
-            "version": "v1.53.0",
+            "version": "v1.53.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/1899ea5306a20c4fb64f00f542e8895e7aa0e8cd",
-                "reference": "1899ea5306a20c4fb64f00f542e8895e7aa0e8cd",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/4bb40e0cc1839054ea5010321e1105107a3413ce",
+                "reference": "4bb40e0cc1839054ea5010321e1105107a3413ce",
                 "shasum": ""
             },
             "require": {
@@ -2026,7 +2020,7 @@
                 "Apache-2.0"
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
-            "time": "2024-01-12T19:18:38+00:00"
+            "time": "2024-01-19T15:59:50+00:00"
         },
         {
             "name": "google/cloud-translate",
@@ -2108,19 +2102,19 @@
         },
         {
             "name": "google/gax",
-            "version": "v1.26.2",
+            "version": "v1.26.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/5dc97ea229abd449fa9acb9a909579f38820badd",
-                "reference": "5dc97ea229abd449fa9acb9a909579f38820badd",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/b7c782dcc40957ad84c9da947cc201f42e97859e",
+                "reference": "b7c782dcc40957ad84c9da947cc201f42e97859e",
                 "shasum": ""
             },
             "require": {
                 "google/auth": "^1.34.0",
-                "google/common-protos": "^3.0||^4.0",
+                "google/common-protos": "^4.4",
                 "google/grpc-gcp": "^0.2||^0.3",
                 "google/longrunning": "~0.2",
-                "google/protobuf": "^3.21.4",
+                "google/protobuf": "^3.22",
                 "grpc/grpc": "^1.13",
                 "guzzlehttp/promises": "^1.4||^2.0",
                 "guzzlehttp/psr7": "^2.0",
@@ -2144,7 +2138,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2024-01-09T19:22:20+00:00"
+            "time": "2024-01-18T20:24:45+00:00"
         },
         {
             "name": "google/grpc-gcp",
@@ -3343,11 +3337,11 @@
         },
         {
             "name": "moneyphp/money",
-            "version": "v4.3.0",
+            "version": "v4.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moneyphp/money/zipball/50ddfd15b2be01d4bed3bcb0c975a6af5f78a183",
-                "reference": "50ddfd15b2be01d4bed3bcb0c975a6af5f78a183",
+                "url": "https://api.github.com/repos/moneyphp/money/zipball/5e60aebf09f709dd4ea16bf85e66d65301c0d172",
+                "reference": "5e60aebf09f709dd4ea16bf85e66d65301c0d172",
                 "shasum": ""
             },
             "require": {
@@ -3399,7 +3393,7 @@
                 "money",
                 "vo"
             ],
-            "time": "2023-11-22T09:46:30+00:00"
+            "time": "2024-01-24T08:29:16+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3465,11 +3459,11 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.72.1",
+            "version": "2.72.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2b3b3db0a2d0556a177392ff1a3bf5608fa09f78",
-                "reference": "2b3b3db0a2d0556a177392ff1a3bf5608fa09f78",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/3e7edc41b58d65509baeb0d4a14c8fa41d627130",
+                "reference": "3e7edc41b58d65509baeb0d4a14c8fa41d627130",
                 "shasum": ""
             },
             "require": {
@@ -3530,15 +3524,15 @@
                 "datetime",
                 "time"
             ],
-            "time": "2023-12-08T23:47:49+00:00"
+            "time": "2024-01-19T00:21:53+00:00"
         },
         {
             "name": "nette/php-generator",
-            "version": "v4.1.2",
+            "version": "v4.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/php-generator/zipball/abc0e79b2d02d4b8aba5933765b90df3f610c143",
-                "reference": "abc0e79b2d02d4b8aba5933765b90df3f610c143",
+                "url": "https://api.github.com/repos/nette/php-generator/zipball/08ab9bff22ae34fe4e1d2fe8ba16b3770ea2459f",
+                "reference": "08ab9bff22ae34fe4e1d2fe8ba16b3770ea2459f",
                 "shasum": ""
             },
             "require": {
@@ -3582,15 +3576,15 @@
                 "php",
                 "scaffolding"
             ],
-            "time": "2023-10-29T22:57:32+00:00"
+            "time": "2024-01-18T17:44:20+00:00"
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.3",
+            "version": "v4.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/a9d127dd6a203ce6d255b2e2db49759f7506e015",
-                "reference": "a9d127dd6a203ce6d255b2e2db49759f7506e015",
+                "url": "https://api.github.com/repos/nette/utils/zipball/d3ad0aa3b9f934602cb3e3902ebccf10be34d218",
+                "reference": "d3ad0aa3b9f934602cb3e3902ebccf10be34d218",
                 "shasum": ""
             },
             "require": {
@@ -3652,7 +3646,7 @@
                 "utility",
                 "validation"
             ],
-            "time": "2023-10-29T21:02:13+00:00"
+            "time": "2024-01-17T16:50:36+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -4951,6 +4945,59 @@
                 "spatie"
             ],
             "time": "2020-12-19T18:47:06+00:00"
+        },
+        {
+            "name": "spicyweb/craft-neo",
+            "version": "4.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/619358c32eb01311d1cd47277511d26686789d09",
+                "reference": "619358c32eb01311d1cd47277511d26686789d09",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.5.0",
+                "php": "^8.0.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "neo",
+                "name": "Neo",
+                "schemaVersion": "4.0.0",
+                "class": "benf\\neo\\Plugin",
+                "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.0.2.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "benf\\neo\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Spicy Web",
+                    "homepage": "https://github.com/spicywebau"
+                }
+            ],
+            "description": "A Matrix-like field type that uses existing fields",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "field",
+                "matrix",
+                "neo",
+                "plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/spicywebau/craft-neo/issues",
+                "source": "https://github.com/spicywebau/craft-neo",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.0.2/README.md",
+                "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
+            },
+            "time": "2024-01-05T11:07:04+00:00"
         },
         {
             "name": "stripe/stripe-php",
@@ -8010,11 +8057,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "craftyfm/craft-feedme-filemaker": 10,
-        "craftyfm/craft-formie-filemaker": 20,
-        "craftyfm/craft-webhooks-filemaker": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

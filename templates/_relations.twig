@@ -1,0 +1,12 @@
+<strong>Form submissions:</strong>
+<br>
+<ul style="list-style: square; margin-left: 1rem;">
+{% for elementRelation in craft.formie.getSubmissionRelations(element) %}
+
+    <li>
+        <a href="{{ elementRelation.cpEditUrl }}" target="_blank">
+            {{ elementRelation.form }} - {{ elementRelation.title }}
+        </a>
+    </li>
+{% endfor %}
+</ul>

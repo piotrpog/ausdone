@@ -1,0 +1,14 @@
+{% extends '_layouts/layout_base' %}
+
+{% block body %}
+
+
+{% if entry.showTitle %}
+    {% include '_components/page-title' %}
+{% endif %}
+
+{% include '_components/content-blocks' with {
+    blocks: entry.contentBlocks,
+} %}
+
+{% endblock %}

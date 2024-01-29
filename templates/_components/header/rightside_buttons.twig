@@ -1,14 +1,24 @@
+{% set navLinks = craft.navigation.nodes().handle('buttonsMenu').level(1).all() %}
 <div class="xl:flex hidden gap-4 items-center font-HelveticaNeue">
-    <button
-            class="2xl:px-5 px-3 py-2 text-base 2xl:text-xl bg-primary hover:bg-primary-muted hover:text-primary transition-colors font-normal text-white whitespace-nowrap rounded-full">
-        <a href="./pages/looking_for_work.html">
-            <span>Looking for Work</span>
+    {%  for node in navLinks %}
+        <a
+            class="{{ node.buttonColor == 'green' ? 'bg-primary hover:bg-primary' }} {{ node.buttonColor == 'purple' ? 'bg-purple hover:bg-purple/30' }} xl:px-5 px-3 py-2 text-base 2xl:text-xl bg-primary hover:bg-primary-muted hover:text-primary transition-colors font-normal text-white whitespace-nowrap rounded-full"
+            href="{{ node.url }}"
+            target="{{ node.newWindow ? '_blank' }}"
+        >
+            <span>{{ node.title }}</span>
         </a>
-    </button>
-    <button
-            class="2xl:px-5 px-3 py-2 text-base 2xl:text-xl bg-purple hover:bg-purple/30 hover:text-purple transition-colors font-normal text-white whitespace-nowrap rounded-full">
-            <a href="#" >
-                <span>Looking for Carer</span>
-            </a>
-    </button>
+    {% endfor %}
+{#    <button#}
+{#            class="2xl:px-5 px-3 py-2 text-base 2xl:text-xl -muted hover:text-primary transition-colors font-normal text-white whitespace-nowrap rounded-full">#}
+{#        <a href="./pages/looking_for_work.html">#}
+{#            <span>Looking for Work</span>#}
+{#        </a>#}
+{#    </button>#}
+{#    <button#}
+{#            class="2xl:px-5 px-3 py-2 text-base 2xl:text-xl  hover:text-purple transition-colors font-normal text-white whitespace-nowrap rounded-full">#}
+{#            <a href="#" >#}
+{#                <span>Looking for Carer</span>#}
+{#            </a>#}
+{#    </button>#}
 </div>

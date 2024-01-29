@@ -1,0 +1,12 @@
+{% set workers = craft.entries()
+    .section('workerSingle')
+    .with(['photo'])
+    .orderBy('postDate DESC')
+    .limit(6)
+    .collect()
+%}
+
+{% include '_components/worker-list-section' with {
+    workers: workers,
+    showMore: true,
+} only %}

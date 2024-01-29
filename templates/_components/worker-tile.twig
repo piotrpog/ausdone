@@ -1,0 +1,75 @@
+
+<div class="flex sm:flex-row flex-col gap-[16px] p-[32px_18px] bg-white border-t-[10px] border-b-[10px] border-[#A0C7C5]">
+    <div class="2xl:flex-[0_0_183px] flex-[0_0_100px] 2xl:min-w-auto min-w-[120px] flex flex-col sm:items-start items-center">
+        <a href="{{ worker.url }}">
+            {% set someAsset1 = worker.coverImage[0] ?? null %}
+            {% set settings =
+                [
+                    {
+                        asset: someAsset1,
+                        transform: {
+                            width: 183,
+                            height: 183,
+                            mode: 'crop',
+                        },
+                    }
+                ]
+            %}
+            {% set htmlAttributes = {
+                class: '',
+            } %}
+            {{ craft.images.pictureMultiple(settings, htmlAttributes) }}
+        </a>
+
+
+        <div class="2xl:my-[28px] my-[16px]  flex-1">
+            {% if worker.languagespoken is not null and worker.languagespoken|column('languageName')|filter(item => item is not empty) %}
+            <h4 class="font-bold  2xl:text-[18px] text-[14px]   -tracking-[0.01em] text-[#707070]">
+                {{ 'Languages spoken'|t }}
+                <br>
+                <span class="font-semibold">{{ worker.languagespoken|column('languageName')|filter(x => x is not empty)|join(', ') }}</span>
+            </h4>
+            {% endif %}
+        </div>
+
+        {% if bookEntry is defined and bookEntry %}
+        <a
+            href="{{ bookEntry.url }}?workerId={{ worker.id }}"
+           class="inline-flex items-center justify-center bg-[#A4CBC9] text-[#18605D] 2xl:min-w-[161px] min-w-[100%] 2xl:text-[18px] text-[16px] rounded-[22px] h-[44px] font-semibold font-openSans  hover:bg-[#18605D] hover:text-[#fff]  transition-all">
+            {{ 'Request'|t }}
+         </a>
+        {% endif %}
+    </div>
+    <div class="flex-1">
+        <a href="{{ worker.url }}" class="font-openSans font-semibold 2xl:text-[30px] text-[22px] -tracking-[0.05em] text-[#707070] mb-[7px]">
+            {{ worker.nameFirst }}
+        </a>
+        <hr class="border-[#559A96] my-[8px]">
+        <p class=" font-openSans 2xl:text-[22px] text-[16px] -tracking-[0.01em] text-[#707070] mb-[15px]  2xl:min-h-[113px] lg:min-h-[80px]">
+            {{ worker.workerDescription|nl2br }}
+        </p>
+
+        <ul>
+            {% for serviceSingle in worker.workerServices %}
+            <li class="flex 2xl:gap-[16.5px] gap-[8px]  font-semibold 2xl:text-[18px] text-[16px]   -tracking-[0.01em] text-[#707070] leading-[30px]">
+                <i class="inline-flex top-[9px] 2xl:flex-initial flex-[0_0_16px]">
+                    <img src="{{ alias('@web') }}/images/tick.svg" alt=""></i> <span class="flex-1">{{ serviceSingle.service }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        <ul class="flex items-center gap-[16px] 2xl:pl-[36.5px] pl-[24px] mt-[8px]">
+            {% if worker.workerFirstAidSwitch %}
+            <li><img src="{{ alias('@web') }}/images/health.svg" alt=""></li>
+            {% endif %}
+            {% if worker.workerMealPrepSwitch %}
+            <li><img src="{{ alias('@web') }}/images/spoon.svg" alt=""></li>
+            {% endif %}
+            {% if worker.workerDriversLicenseSwitch %}
+            <li><img src="{{ alias('@web') }}/images/cars.svg" alt=""></li>
+            {% endif %}
+            {% if worker.workerCertIvSwitch %}
+            <li><img src="{{ alias('@web') }}/images/degree.svg" alt=""></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

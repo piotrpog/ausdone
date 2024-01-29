@@ -1,0 +1,198 @@
+<section>
+    <div class="container bg-secondary px-4 py-8">
+        <div class="max-w-7xl w-full mx-auto">
+            <div class="w-full flex flex-col gap-16">
+                <div>
+                    <h1 class="font-bold text-xl sm:text-3xl md:text-:4xl lg:text-5xl text-muted">
+                        Carer Search
+                    </h1>
+                </div>
+                <div class="flex flex-col gap-2 w-full">
+                    <label for="address" class="flex gap-x-2 flex-wrap w-full">
+                        <span class="font-bold text-lg md:text-xl lg:text-xxl text-muted">Location</span>
+                        <span class="text-lg md:text-xl lg:text-xxl text-muted">(Full Address or Postcode)</span>
+                    </label>
+                    <div>
+                        <input class="bg-white border w-full border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary" id="address" type="text" name="address" autocomplete="address-level1 postal-code">
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-x-10 gap-y-6">
+                    <div class="flex flex-col gap-2 flex-1 min-w-fit">
+                        <label for="gender" class="font-bold text-muted text-lg md:text-xl lg:text-xxl">Gender</label>
+                        <select class="bg-white border w-full border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary" name="gender" id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2 flex-1 min-w-fit">
+                        <label for="language" class="font-bold text-muted text-lg md:text-xl lg:text-xxl">Language spoken</label>
+                        <select class="bg-white border w-full border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary" name="language" id="language">
+                            <option value="english">English</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="mandarin">Mandarin</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2 flex-1 min-w-fit">
+                        <label for="qualifications" class="font-bold text-muted text-lg md:text-xl lg:text-xxl">Qualifications</label>
+                        <select class="bg-white border w-full border-border p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary" name="qualifications" id="qualifications">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <span class="font-bold text-muted text-lg md:text-xl lg:text-xxl">
+                    Service needed
+                  </span>
+                    <div x-data="filterCheckbox" class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <template x-for="item in filterCheckbox">
+                            <div class="flex gap-2 items-center">
+                                <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name">
+                                    <input class="hidden peer" type="checkbox" name="" :id="item.name">
+                                    <div class="w-5/6 peer-checked:block hidden">
+                                        <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name"></label>
+                            </div>
+                        </template><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Aged Care Support">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Aged Care Support">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Aged Care Support">Aged Care Support</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Cooking">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Cooking">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Cooking">Cooking</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Disability Support">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Disability Support">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Disability Support">Disability Support</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Domestic Duties">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Domestic Duties">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Domestic Duties">Domestic Duties</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Gardening">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Gardening">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Gardening">Gardening</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Manual Handling Certified">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Manual Handling Certified">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Manual Handling Certified">Manual Handling Certified</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Student">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Student">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Student">Student</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Pet Friendly">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Pet Friendly">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Pet Friendly">Pet Friendly</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Personal Care">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Personal Care">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Personal Care">Personal Care</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Overnight Stays">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Overnight Stays">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Overnight Stays">Overnight Stays</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Non Smoker">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Non Smoker">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Non Smoker">Non Smoker</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Auslan">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Auslan">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Auslan">Auslan</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Prepared to Travel">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Prepared to Travel">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Prepared to Travel">Prepared to Travel</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Cleaning">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Cleaning">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Cleaning">Cleaning</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Companionship">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Companionship">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Companionship">Companionship</label>
+                        </div><div class="flex gap-2 items-center">
+                            <label class="w-6 h-6 bg-white flex justify-center items-center border border-border rounded select-none" x-bind:for="item.name" for="Technology">
+                                <input class="hidden peer" type="checkbox" name="" :id="item.name" id="Technology">
+                                <div class="w-5/6 peer-checked:block hidden">
+                                    <img class="object-contain" src="../assets/images/ok-gray.svg" alt="">
+                                </div>
+                            </label>
+                            <label class="text-muted text-lg sm:text-xl md:text-xxl" x-bind:for="item.name" x-text="item.name" for="Technology">Technology</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex justify-center items-center py-8">
+                    <button class="text-white bg-primary px-6 py-2 rounded-full hover:bg-primary-light hover:text-primary transition-colors font-semibold text-base md:text-lg">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

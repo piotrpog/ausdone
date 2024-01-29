@@ -1,0 +1,95 @@
+<section class="bg-primary-light pt-16 pb-10">
+    <div class="max-w-7xl px-4 mx-auto">
+        <div class="flex flex-col gap-y-10 md:flex-row gap-x-14">
+            <div class="flex-1 flex flex-col gap-6">
+                <h3 class="text-muted font-bold text-3xl sm:text-4xl md:text-5xl">
+                    {{ block.header }}
+                </h3>
+                <div class="text-muted text-base font-bold sm:text-xl md:text-2xl">
+                    <div class="">
+                        {{ block.textContent }}
+                    </div>
+                </div>
+                {% set image = block.image.one() %}
+                {% if image %}
+                    {% set settings =
+                        [
+                            {
+                                asset: image,
+                                transform: {
+                                    width: 384,
+                                    mode: 'fit',
+                                },
+                            }
+                        ]
+                    %}
+                    {% set htmlAttributes = {
+                        class: 'max-w-sm w-full object-contain',
+                    } %}
+                    {{ craft.images.pictureMultiple(settings, htmlAttributes) }}
+                {% endif %}
+            </div>
+            <div class="flex-1">
+                {% set form = block.formieForm.one() %}
+                {% if form %}
+                    {% set renderOptions = {
+
+                        themeConfig: {
+                            fieldLabel: {
+                                resetClass: true,
+                                attributes: {
+                                    class: 'text-muted text-xl font-bold md:text-2xl',
+                                },
+                            },
+                            submitButton: {
+                                resetClass: true,
+                                attributes: {
+                                    class: 'bg-primary mt-10 hover:bg-primary-muted font-semibold text-base md:text-lg text-white hover:text-primary transition-colors px-4 py-2 rounded-full w-fit',
+                                },
+                            }
+                        },
+                    } %}
+                    {{ craft.formie.renderForm(form, renderOptions) }}
+                {% endif %}
+
+
+
+
+
+{#                <form action="#" class="flex flex-col gap-6 md:gap-10">#}
+{#                    <div class="flex flex-col w-full gap-1">#}
+{#                        <label class="text-muted text-xl font-bold md:text-2xl" for="name">Your Name#}
+{#                            <sup>#}
+{#                                <span class="text-red-500">*</span>#}
+{#                            </sup></label>#}
+{#                        <input class="bg-white p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary" id="name" type="text" name="name" autocomplete="name">#}
+{#                    </div>#}
+{#                    <div class="flex flex-col w-full gap-1">#}
+{#                        <label class="text-muted text-xl font-bold md:text-2xl" for="email">Your Email Address#}
+{#                            <sup>#}
+{#                                <span class="text-red-500">*</span>#}
+{#                            </sup></label>#}
+{#                        <input class="bg-white p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary" id="email" type="text" name="email" autocomplete="email">#}
+{#                    </div>#}
+{#                    <div class="flex flex-col w-full gap-1">#}
+{#                        <label class="text-muted text-xl font-bold md:text-2xl" for="phone">Your Phone Number#}
+{#                            <sup>#}
+{#                                <span class="text-red-500">*</span>#}
+{#                            </sup></label>#}
+{#                        <input class="bg-white p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary" id="phone" type="text" name="phone" autocomplete="tel">#}
+{#                    </div>#}
+{#                    <div class="flex flex-col w-full gap-1">#}
+{#                        <label class="text-muted text-xl font-bold md:text-2xl" for="enquiry">Your Enquiry#}
+{#                            <sup>#}
+{#                                <span class="text-red-500">*</span>#}
+{#                            </sup></label>#}
+{#                        <textarea class="bg-white resize-none p-2 rounded ring-primary focus:ring-primary focus:outline-1 outline-primary" id="enquiry" name="phone" rows="6"></textarea>#}
+{#                    </div>#}
+{#                    <button type="submit" class="bg-primary mt-10 hover:bg-primary-muted font-semibold text-base md:text-lg text-white hover:text-primary transition-colors px-4 py-2 rounded-full w-fit">#}
+{#                        <span>Submit Request</span>#}
+{#                    </button>#}
+{#                </form>#}
+            </div>
+        </div>
+    </div>
+</section>

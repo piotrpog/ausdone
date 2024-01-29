@@ -1,7 +1,10 @@
-<a href="index.html">
+{% set logo = header.mainLogo.one() %}
+{% if logo %}
+<a href="{{ alias('@web') }}">
     <img
-            class="max-w-[150px] 2xl:max-w-[200px]"
-            src="./images/logo.svg"
-            alt="logo"
+        class="max-w-[150px] 2xl:max-w-[200px]"
+        src="{{ logo.url }}"
+        alt="Ausdone logo"
     />
 </a>
+{% endif %}

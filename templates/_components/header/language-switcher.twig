@@ -1,0 +1,39 @@
+{% set currentElement = craft.app.urlManager.matchedElement %}
+		{% set sites = craft.app.getSites().getGroupById(currentSite.groupId).getSites() %}
+		{% set switcherLinks = [] %}
+
+		{% for site in sites|filter(x => x.baseUrl is not empty) %}
+
+            {% set title = craft.app.i18n.getLocaleById(site.language).languageID %}
+            {% set url = site.getBaseUrl() %}
+            {% if currentElement %}
+                {% set otherLocaleElement = craft.app.getElements().getElementById(currentElement.id, currentElement.className(), site.id) %}
+                {% if otherLocaleElement and otherLocaleElement.enabledForSite %}
+                    {% set url = otherLocaleElement.url %}
+                {% endif %}
+            {% endif %}
+
+            {% set switcherLinks = switcherLinks|merge([{
+                url: url,
+                title: title,
+                countryCode: site.language|split('-')|last,
+                current: site.id == currentSite.id ? true : false,
+                language: site.language,
+            }]) %}
+
+        {% endfor %}
+{% if switcherLinks|length > 1 %}
+<div class="flex flex-row justify-center select-none">
+    <div class="flex flex-row items-center right-1 ">
+    {% for switcherLink in switcherLinks %}
+    <button class="p-2 flex flex-row items-center border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none {{ switcherLink.current ? 'bg-primary-muted' }}"
+    >
+        <span class="text-md">{{ switcherLink.title|upper }}</span>
+        <span class="ml-1"><span class="fi fi-{{switcherLink.countryCode|lower}}"></span></span>
+    </button>
+    {% endfor %}
+    </div>
+
+</div>
+
+{% endif %}

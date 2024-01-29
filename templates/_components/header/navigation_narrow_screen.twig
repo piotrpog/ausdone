@@ -36,63 +36,28 @@
                 ></span>
             </div>
             <ul class="flex flex-col items-start">
+                {% set navLinks = craft.navigation.nodes().handle('mainMenu').level(1).all() %}
+                {% for node in navLinks %}
                 <li class="w-full">
                     <a
                             class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
-                            href="#"
-                    >Our Services</a
+                            href="{{ node.url }}" target="{{ node.newWindow ? '_blank' }}"
+                    >{{ node.title }}</a
                     >
                 </li>
-                <li class="w-full">
-                    <a
-                            class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
-                            href="#"
-                    >Request a Carer</a
-                    >
-                </li>
-                <li class="w-full">
-                    <a
-                            class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
-                            href="#"
-                    >NDIS Provider</a
-                    >
-                </li>
-                <li class="w-full">
-                    <a
-                            class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
-                            href="#"
-                    >Looking for Work</a
-                    >
-                </li>
-                <li class="w-full">
-                    <a
-                            class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
-                            href="#"
-                    >About Us</a
-                    >
-                </li>
-                <li class="w-full">
-                    <a
-                            class="w-full flex py-3 font-HelveticaNeue text-black 2xl:text-xl text-base font-normal hover:text-primary transition-colors border-b border-border"
-                            href="#"
-                    >Contact</a
-                    >
-                </li>
+                {% endfor %}
             </ul>
             <div class="flex flex-col gap-4 py-4">
-                <button
-                        class="bg-primary hover:bg-primary-muted py-3  text-white transition-colors rounded-full w-full text-whote"
-                >
-                    <span>Looking for Work</span>
-                </button>
-                <button
-                        class="bg-purple hover:bg-purple/30 py-3 text-white rounded-full w-full text-whote transition-colors"
-                >
-                    <span>Looking for Work</span>
-                </button>
+                {% set navLinks = craft.navigation.nodes().handle('buttonsMenu').level(1).all() %}
+                {% for node in navLinks %}
+                    <a
+                            class="{{ node.buttonColor == 'green' ? 'bg-primary hover:bg-primary' }} {{ node.buttonColor == 'purple' ? 'bg-purple hover:bg-purple/30' }} xl:px-5 px-3 py-2 text-base 2xl:text-xl bg-primary hover:bg-primary-muted hover:text-primary transition-colors font-normal text-white whitespace-nowrap rounded-full text-center"
+                            href="{{ node.url }}"
+                            target="{{ node.newWindow ? '_blank' }}"
+                    >
+                        <span>{{ node.title }}</span>
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </div>
-
-<!-- <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1> -->
-<!-- burger -->

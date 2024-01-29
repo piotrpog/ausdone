@@ -1,17 +1,19 @@
 {% extends '_layouts/layout_base' %}
 
-{% set body_class = 'page-home' %}
- 
-    {% block header %}
-       {{ parent() }}
-    {% endblock %}
+{% block body %}
 
-    {% block body %}
-        {% include '_pages/home/home-herobanner' %}
-        {% include '_pages/home/home-display-workers' %}
-    {% endblock %}
+    {% include '_pages/worker-search/worker-search-form' %}
 
-    {% block footer %}
-        {{ parent() }}
-    {% endblock %}
+    {% set workers = craft.entries()
+        .section('workerSingle')
+        .with(['photo'])
+        .orderBy('title DESC')
+        .collect()
+    %}
 
+    {% include '_components/worker-list-section' with {
+        workers: workers,
+        showMore: false,
+    } only %}
+
+{% endblock %}

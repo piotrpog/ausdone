@@ -1,0 +1,21 @@
+<section>
+    <div class="container pt-9 pb-10 lg:pb-20">
+        {% set bg = block.image.one() %}
+        <div class="2xl:p-[100px_122px] xl:p-[80px_100px] sm:p-[50px] p-[30px_20px] bg-cover bg-no-repeat bg-[60%_100%] sm:bg-right-top border-border" style="{{ bg ? 'background-image: url(' ~ bg.url ~ ');' }}">
+            {% set logo = block.mainLogo.one() %}
+            {% if logo %}
+            <img src="{{ logo.url }}" alt="" class="sm:h-auto h-[22px]">
+            {% endif %}
+            <h1 class="font-openSans font-bold 2xl:text-[100px] lg:text-[72px] sm:text-[42px] text-[30px] -tracking-[0.05em] text-primary">
+                {{ block.textTop }}
+            </h1>
+            <p class="font-openSans font-light 2xl:text-[45px] lg:text-xxl sm:text-lg text-sm 2xl:leading-[61px] lg:leading-[36px] leading-[28px] -tracking-[0.05em] text-primary 2xl:max-w-[668px] lg:max-w-[400px] max-w-[300px] 2xl:mb-[45px] lg:mb-[30px] mb-[16px]">
+                {{ block.textBottom }}
+            </p>
+            {% set ndis = block.ndisLogo.one() %}
+            {% if ndis %}
+            <img src="{{ ndis.url }}" alt="" class="sm:h-auto h-10">
+            {% endif %}
+        </div>
+    </div>
+</section>

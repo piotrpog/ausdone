@@ -1,0 +1,32 @@
+{% set bookEntry = settingsGlobal.bookMeEntry.one() %}
+<section class="lg:py-[100px] py-[50px] bg-[#F5F5F5]">
+    <div class="lg:container mx-auto px-4">
+
+        {% if workers | length %}
+            <div class="grid xl:grid-cols-3 lg:grid-cols-2  grid-cols-1 gap-x-[16px] xl:gap-y-[53px] gap-y-[30px]">
+                {# Loop through entries and display data in a list #}
+                {% for worker in workers %}
+
+                    {% include '_components/worker-tile' with {
+                        worker: worker,
+                        bookEntry: bookEntry,
+                    } only %}
+
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Show more -->
+        {% if showMore ?? false %}
+            {% set moreEntry = craft.entries.section('workersSearch').one() %}
+            {% if moreEntry %}
+                <div class="text-center sm:mt-[90px] mt-[30px]">
+                    <a href="{{ moreEntry.url }}" class="inline-block font-semibold font-openSans underline -tracking-[0.01em] text-[#6c2b77]">
+                        {{ 'Show More…'|t }}
+                    </a>
+                </div>
+            {% endif %}
+        {% endif %}
+
+    </div>
+</section>

@@ -1,0 +1,264 @@
+{% extends '_layouts/layout_base' %}
+
+{% block body %}
+    <div class="container p-0">
+        <div class="flex flex-1 justify-between px-0 xs:px-4 sm:px-6 md:px-10">
+            <div class="bg-secondary-light w-full pr-8 pl-4 xl:pl-20 pb-24 flex flex-col gap-14">
+                <div class="w-full border-b border-border h-52">
+{#                    <div class="flex text-primary text-lg xs:text-xl md:text-xxl py-10">#}
+{#                  <span><span class="underline">Home</span> &gt;#}
+{#                    <span class="underline">Carer Profile</span> &gt; Carrie Chen</span>#}
+{#                    </div>#}
+                    {% include '_components/breadcrumb' %}
+
+                    <div class="text-muted">
+                        <div class="mb-4">
+                            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+                                {{ entry.title }}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex md:flex-row flex-col gap-10 items-start">
+                    {% set avatar = entry.coverImage.one() %}
+                    <div class="self-center md:self-start">
+                        {% set settings =
+                            [
+                                {
+                                    asset: avatar,
+                                    transform: {
+                                        width: 183,
+                                        height: 183,
+                                        mode: 'crop',
+                                    },
+                                }
+                            ]
+                        %}
+                        {% set htmlAttributes = {
+                            class: '',
+                        } %}
+                        {{ craft.images.pictureMultiple(settings, htmlAttributes) }}
+{#                        <img src="../assets/images/avatar_01.svg" alt="avatar">#}
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex md:flex-row flex-col gap-4">
+
+{#                            <div class="text-muted  font-bold text-lg md:text-xl lg:text-xxl xl:text-2xl 2xl:text-3xl">#}
+{#                                Carrie Chen#}
+{#                            </div>#}
+
+{#                            <div class="flex items-center gap-1">#}
+{#                                <div class="flex items-center gap-1">#}
+{#                                    <img src="../assets/images/star-full.svg" alt="star">#}
+{#                                    <img src="../assets/images/star-full.svg" alt="star">#}
+{#                                    <img src="../assets/images/star-full.svg" alt="star">#}
+{#                                    <img src="../assets/images/star-full.svg" alt="star">#}
+{#                                    <img src="../assets/images/star-empty.svg" alt="star">#}
+{#                                </div>#}
+{#                                <div class="text-muted">(134)</div>#}
+{#                            </div>#}
+                        </div>
+                        <div>
+                            <span class="text-muted text-base sm:text-lg md:text-xl xl:text-xxl">
+                                {{ entry.workerDescription|nl2br }}
+                            </span>
+                        </div>
+                        <ul class="list-image-[url('./assets/images/ok.svg')] list-inside">
+                            {% for singleService in entry.workerServices %}
+                            <li class="font-semibold 2xl:text-lg text-base -tracking-[0.01em] text-muted">
+                                {{ singleService.service }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- sidebar on mobile start -->
+                <div class="lg:hidden flex flex-col w-full gap-14">
+                    <div class="flex md:flex-row flex-col gap-14 w-full">
+                        <div class="flex gap-6 justify-between">
+                            <a href="#" class="inline-flex whitespace-nowrap items-center justify-center bg-primary-muted text-primary px-4 flex-1 2xl:text-lg text-base rounded-3xl h-11 font-semibold font-openSans hover:bg-primary hover:text-white transition-all">Book Me</a>
+                            <a href="#" class="inline-flex whitespace-nowrap items-center justify-center bg-primary-muted text-primary px-4 flex-1 2xl:text-lg text-base rounded-3xl h-11 font-semibold font-openSans hover:bg-primary hover:text-white transition-all">Message Me</a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center gap-2">
+                                <img src="../assets/images/health.svg" alt="health">
+                                <span class="text-base xs:text-lg sm:text-xl md:text-xxl font-semibold text-primary">First Aid</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <img src="../assets/images/car.svg" alt="car">
+                                <span class="text-base xs:text-lg sm:text-xl md:text-xxl font-semibold text-primary">Drivers Lic.</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <img src="../assets/images/spoon.svg" alt="spoon">
+                                <span class="text-base xs:text-lg sm:text-xl md:text-xxl font-semibold text-primary">Meal Prep</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <img src="../assets/images/degree.svg" alt="degree">
+                                <span class="text-base xs:text-lg sm:text-xl md:text-xxl font-semibold text-primary">Cert IV</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-x-4 gap-y-8 xs:grid-cols-2">
+                        <div class="flex flex-col">
+                            <span class="font-bold text-lg sm:text-xl md:text-2xl text-muted">Language spoken</span>
+                            <span class="text-base text-muted sm:text-lg">English</span>
+                            <span class="text-base text-muted sm:text-lg">Mandarin</span>
+                            <span class="text-base text-muted sm:text-lg">Fuzhou Dilect</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-lg sm:text-xl md:text-2xl text-muted">Gender</span>
+                            <span class="text-base text-muted sm:text-lg">Female</span>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <!-- sidebar on mobile end -->
+
+                {% if entry.workerServicesOfferedText %}
+                <div class="w-full flex flex-col gap-4">
+                    <div class="flex flex-wrap gap-x-4">
+                        <span class="text-lg md:text-xl lg:text-xxl xl:text-2xl font-bold text-muted">{{ 'Service offered'|t }}</span>
+                        <span class="text-muted text-base sm:text-lg">{{ 'List of services Carrie is able to do'|t }}</span>
+                    </div>
+                    <div class="w-full min-h-96  bg-secondary p-5 flex flex-col text-base sm:text-lg md:text-xl lg:text-xxl text-muted">
+                        {{ entry.workerServicesOfferedText|nl2br }}
+                    </div>
+                </div>
+                {% endif  %}
+
+                {% if entry.workerExperienceText %}
+                <div class="w-full flex flex-col gap-4">
+                    <div class="flex gap-4">
+                        <span class="text-lg md:text-xl lg:text-xxl xl:text-2xl font-bold text-muted">
+                            {{ 'Expirience in the following'|t }}
+                        </span>
+                    </div>
+                    <div class="w-full min-h-96 bg-secondary p-5 flex flex-col text-base sm:text-lg md:text-xl lg:text-xxl text-muted">
+                        {{ entry.workerExperienceText|nl2br }}
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if entry.workerFormalTrainingText %}
+                <div class="w-full flex flex-col gap-4">
+                    <div class="flex gap-4">
+                        <span class="text-lg md:text-xl lg:text-xxl xl:text-2xl font-bold text-muted">
+                            {{ 'Formal training'|t }}
+                        </span>
+                    </div>
+                    <div class="w-full min-h-96  bg-secondary p-5 flex flex-col text-base sm:text-lg md:text-xl lg:text-xxl text-muted">
+                        {{ entry.workerFormalTrainingText|nl2br }}
+                    </div>
+                </div>
+                {% endif %}
+
+
+                <!-- gallery start -->
+                {% set gallery = entry.imageGallery.all() %}
+                {% if gallery is not empty %}
+                <div class="flex flex-col gap-4">
+                    <span class="font-bold text-lg sm:text-xl md:text-2xl text-muted">Photo gallery</span>
+                    <div class="bg-secondary p-5">
+                        <div class="w-full grid grid-cols-4 gap-3">
+                            {% for image in gallery %}
+                                {% set settings =
+                                    [
+                                        {
+                                            asset: image,
+                                            transform: {
+                                                width: 247,
+                                            },
+                                        }
+                                    ]
+                                %}
+                                {% set htmlAttributes = {
+                                    class: 'w-full h-full object-cover',
+                                } %}
+                                {{ craft.images.pictureMultiple(settings, htmlAttributes) }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <!-- gallery end -->
+
+            </div>
+            <div class="bg-secondary lg:flex hidden lg:max-w-xs xl:max-w-sm w-full px-4 flex-col gap-14">
+                <div class="h-52 border-b border-border w-full"></div>
+                <div class="flex gap-6 justify-between">
+                    {% set bookEntry = settingsGlobal.bookMeEntry.one() %}
+                    {% if bookEntry %}
+                    <a
+                       href="{{ bookEntry.url }}?workerId={{ entry.id }}"
+                       class="inline-flex items-center justify-center bg-primary-muted text-primary px-4 flex-1 2xl:text-lg text-base rounded-3xl h-11 font-semibold font-openSans hover:bg-primary hover:text-white transition-all">
+                        {{ 'Book Me'|t }}
+                    </a>
+                    {% endif %}
+
+
+                    {% set contactMeEntry = settingsGlobal.contactMeEntry.one() %}
+                    {% if contactMeEntry %}
+                    <a
+                       href="{{ contactMeEntry.url }}?workerId={{ entry.id }}"
+                       class="inline-flex items-center justify-center bg-primary-muted text-primary px-4 flex-1 2xl:text-lg text-base rounded-3xl h-11 font-semibold font-openSans hover:bg-primary hover:text-white transition-all"
+                    >
+                        {{ 'Message Me'|t }}
+                    </a>
+                    {% endif %}
+                </div>
+
+
+                <div class="grid grid-cols-2 gap-4">
+                    {% if entry.workerFirstAidSwitch %}
+                    <div class="flex items-center gap-2">
+                        <img src="{{ alias('@web') }}/images/health.svg">
+                        <span class="text-base xs:text-lg sm:text-xl md:text-xxl font-semibold text-primary">{{ 'First Aid'|t }}</span>
+                    </div>
+                    {% endif %}
+                    {% if entry.workerMealPrepSwitch %}
+                    <div class="flex items-center gap-2">
+                        <img src="{{ alias('@web') }}/images/spoon.svg">
+                        <span class="text-base xs:text-lg sm:text-xl md:text-xxl font-semibold text-primary">{{ 'Drivers Lic.'|t }}</span>
+                    </div>
+                    {% endif %}
+                    {% if entry.workerDriversLicenseSwitch %}
+                    <div class="flex items-center gap-2">
+                        <img src="{{ alias('@web') }}/images/cars.svg">
+                        <span class="text-base xs:text-lg sm:text-xl md:text-xxl font-semibold text-primary">{{ 'Meal Prep'|t }}</span>
+                    </div>
+                    {% endif %}
+                    {% if entry.workerCertIvSwitch %}
+                    <div class="flex items-center gap-2">
+                        <img src="{{ alias('@web') }}/images/degree.svg">
+                        <span class="text-base xs:text-lg sm:text-xl md:text-xxl font-semibold text-primary">{{ 'Cert IV'|t }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+
+                {% if entry.gender %}
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg sm:text-xl md:text-2xl text-muted">{{ 'Gender'|t }}</span>
+                    <span class="text-base text-muted sm:text-lg">
+                        {{ entry.gender == 'male' ? 'Male'|t }}
+                        {{ entry.gender == 'female' ? 'Female'|t }}
+                    </span>
+                </div>
+                {% endif %}
+
+                {% if entry.languagespoken is not empty %}
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg sm:text-xl md:text-2xl text-muted">{{ 'Languages spoken'|t }}</span>
+                    {% for language in entry.languagespoken %}
+                    <span class="text-base text-muted sm:text-lg">{{ language.languageName }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

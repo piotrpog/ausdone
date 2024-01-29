@@ -1,0 +1,28 @@
+<section>
+    <div class="container pb-10 lg:pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-3 gap-x-8 gap-y-12">
+
+            {% for child in block.children %}
+            <div class="flex-1 flex lg:flex-row flex-col lg:items-stretch lg:gap-0 gap-4 text-left text-muted">
+                {% set image = child.image.one() %}
+                {% if image %}
+                <div class="shrink-0">
+                    <img src="{{ image.url }}" alt="card-1">
+                </div>
+                {% endif %}
+                <div class="flex flex-col lg:ml-10 gap-2">
+                    <h3 class="text-2xl xs:text-3xl sm:text-4xl font-bold">{{ child.header }}</h3>
+                    <div class="text-lg xs:text-xl sm:text-2xl">
+{#                        <ul class="list-image-[url('./assets/images/ok.svg')] lg:ml-0 ml-7 text-left text-base sm:text-lg lg:text-xxl">#}
+                        <div class="content">
+                            {{ child.textContent }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>

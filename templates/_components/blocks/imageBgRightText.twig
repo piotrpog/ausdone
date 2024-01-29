@@ -1,0 +1,33 @@
+<section class="bg-white relative flex-col">
+    <div class="2xl:absolute inset-0 flex justify-center items-center">
+        <div class="max-w-3xl text-center 2xl:translate-x-1/3 py-20 px-4">
+            <div class="text-muted font-bold text-2xl xs:text-3xl sm:text-5xl xl:text-6xl 2xl:text-7xl">
+                <span>{{ block.textTop }}</span>
+            </div>
+            <br>
+            <div class="text-muted text-base xs:text-xl text-2xl lg:text-3xl">
+                <span>{{ block.textBottom }}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        {% set image = block.image.one() %}
+        {% if image %}
+            {% set settings =
+                [
+                    {
+                        asset: image,
+                        transform: {
+
+                        },
+                    }
+                ]
+            %}
+            {% set htmlAttributes = {
+                class: '',
+            } %}
+            {{ craft.images.pictureMultiple(settings, htmlAttributes) }}
+        {% endif %}
+    </div>
+</section>

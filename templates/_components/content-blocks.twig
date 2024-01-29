@@ -1,0 +1,84 @@
+{% set entryContentPlaceholder = entryContentPlaceholder ?? null %}
+{% set showDefaultContent = showDefaultContent ?? true %}
+
+{% if blocks or entryContentPlaceholder %}
+<div class="content-blocks">
+
+    {# default content if content placeholder block was not used #}
+    {% if
+        blocks|filter(x => x.type == 'blocksEntryContentPlaceholder') is empty and
+        entryContentPlaceholder and
+        showDefaultContent
+    %}
+        {% set initial = [
+            {
+                type: 'blocksEntryContentPlaceholder',
+            }
+        ] %}
+        {% set blocks = initial|merge(blocks) %}
+    {% endif %}
+
+    {% for block in blocks %}
+
+    {# default options #}
+    {% set hasContainer = false %}
+
+{#        {{ dump(block.type) }}#}
+
+    {% switch block.type %}
+
+        {# text #}
+        {% case 'text' %}
+            {% include '_components/blocks/text' with {
+                block: block,
+            } only %}
+
+        {# text #}
+        {% case 'columns' %}
+            {% include '_components/blocks/columns' with {
+                block: block,
+            } only %}
+
+        {# contact form common #}
+        {% case 'contactFormCommon' %}
+            {% include '_components/blocks/contactFormCommon' with {
+                block: block,
+            } only %}
+
+
+        {# contact form common #}
+        {% case 'contactFormWithInfo' %}
+            {% include '_components/blocks/contactFormWithInfo' with {
+                block: block,
+            } only %}
+
+        {# formie form #}
+        {% case 'formieForm' %}
+            {% include '_components/blocks/formieForm' with {
+                block: block,
+            } only %}
+
+        {# image background and right text #}
+        {% case 'imageBgRightText' %}
+            {% include '_components/blocks/imageBgRightText' with {
+                block: block,
+            } only %}
+
+        {# Banner #}
+        {% case 'banner' %}
+            {% include '_components/blocks/banner' with {
+                block: block,
+            } only %}
+
+        {# workers list #}
+        {% case 'workersList' %}
+            {% include '_components/blocks/workersList' with {
+                block: block,
+            } only %}
+
+
+    {% endswitch %}
+
+    {% endfor %}
+</div>
+{% endif %}

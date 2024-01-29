@@ -15,7 +15,7 @@
     {% include '_system/link' %}
     {% include '_system/favicons' %}
     {% include '_system/fonts' %}
-    {% include '_system/static' %}
+    {% do craft.staticFileManager.outputFiles() %}
     {% include '_system/tag_manager' %}
 
 </head>

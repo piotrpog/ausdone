@@ -1,0 +1,48 @@
+{#{% set paddingTop = block.blocksPaddingTop ?? 1 %}#}
+{#{% if loop.index == 1 %}#}
+{#    {% set paddingTop = 0 %}#}
+{#{% endif %}#}
+{#{% set paddingBottom = block.blocksPaddingBottom ?? 1 %}#}
+
+{#{% set paddingTop = 1 %}#}
+{#{% set paddingBottom = 1 %}#}
+
+{% tag 'section' with {
+    class: [
+        'content-block',
+        blockClass ?? null,
+    ],
+    data: {
+        'content-block-single': true,
+    },
+
+} %}
+{#    style: {#}
+{#    'padding-top': paddingTop ~ 'rem',#}
+{#    'padding-bottom': paddingBottom ~ 'rem',#}
+{#    }#}
+
+    {# content outside container #}
+    {% block blockOutsideContainer %}{% endblock %}
+
+    {# content in container #}
+    {% if block('blockContent') %}
+        {% tag 'div' with {
+            class: [
+                (hasContainer ?? true) ? 'container',
+                containerClass ?? null,
+            ],
+        } %}
+            {% block blockContent %}{% endblock %}
+        {% endtag %}
+    {% endif %}
+
+{% endtag %}
+
+{% css %}
+.content-block{
+    position: relative;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+{% endcss %}

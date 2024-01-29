@@ -36,13 +36,16 @@
 {# render breadcrumb #}
 {% if breadcrumbLinks|length > 1 %}
 <nav class="breadcrumb" aria-label="{{'breadcrumbs'|t}}">
-    <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <ul itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-primary text-lg xs:text-xl md:text-xxl py-10">
         {% for link in breadcrumbLinks %}
             <li class="{{loop.last ? 'is-active'}}" {{loop.last ? 'aria-current="page"' }} itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                 <a href="{{link.url}}" itemtype="http://schema.org/Thing" itemprop="item">
                     <span itemprop="name">{{ link.title }}</span>
                 </a>
                 <meta itemprop="position" content="{{loop.index}}" />
+                {% if not loop.last %}
+                    &gt;&nbsp;
+                {% endif %}
             </li>
         {% endfor %}
     </ul>

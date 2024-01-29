@@ -6,31 +6,31 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            fieldUid: 42902358-2279-4962-a323-bf1c5261c94d # Footer Main Logo
+            fieldUid: d5339bf0-0c3b-4e06-a372-13a219e9f891 # Main Logo
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 26bf46d1-b82b-4b71-aa45-81a759cd663f
+            uid: 0e6ebe25-5a8a-4d62-98ec-657be9f72eff
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: f93491e1-e91d-494b-9aa5-633b7526af58 # Footer Blurb
+            fieldUid: 22b7cdae-c78f-4612-a57c-04b2d0e2877b # Footer column 1 text
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d6f37bd4-f009-426a-bc72-4baacdbe5f21
+            uid: a4f3d3bb-ae8f-4f50-a69c-cadf7c3f9e5f
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 0722dc22-0b8d-4f90-b741-fee98901b5f6 # Footer NDIS Logo
+            fieldUid: 0722dc22-0b8d-4f90-b741-fee98901b5f6 # NDIS Logo
             instructions: null
             label: null
             required: false
@@ -79,6 +79,18 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: e79740f1-2f4e-4660-a144-2b1d13fb4146
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9654f065-6bca-4c2a-925a-10ba8808da44 # Phone Number of Requester
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cce745c6-6492-44e5-b7e9-53c84391e21a
             userCondition: null
             warning: null
             width: 100
@@ -172,6 +184,18 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: 5562724a-a38e-4c11-9331-772c139a98b7 # Work for us apply entry
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72e6e18a-5231-4cd5-8c05-cd37bfbd02ea
+            userCondition: null
+            warning: null
+            width: 100
         name: 'Column Three'
         uid: ffd90f76-0d73-4dde-9b7f-811681b042fe
         userCondition: null
@@ -204,13 +228,13 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: bae20859-015c-43bd-95d0-63c67edb6c28 # Subscribe Email Text
+            fieldUid: 7227699c-4373-4051-96d7-70ba93dc7b0e # Formie form
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 68bd5f00-8226-4428-a4b0-08d6020a2379
+            uid: 257f232a-9f3b-42de-88a8-8ba3ac8972b5
             userCondition: null
             warning: null
             width: 100

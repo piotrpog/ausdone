@@ -3,3 +3,7 @@
 /vendor
 .DS_Store
 /plugins/craftcms-filemaker
+/node_modules
+/web/images/transforms
+/web/images/workers/transforms
+/config/project

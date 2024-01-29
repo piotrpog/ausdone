@@ -1,0 +1,35 @@
+<div class="container p-0 mb-10">
+    <div class="flex flex-1 justify-between px-0 xs:px-4 sm:px-6 md:px-10">
+        <div class="bg-secondary-light w-full pr-4 pl-4 md:pl-20 md:pr-20 pb-14 pt-14">
+            {% set form = block.formieForm.one() %}
+            {% if form %}
+                {% set renderOptions = {
+                    themeConfig: {
+                        fieldLabel: {
+                            resetClass: true,
+                            attributes: {
+                                class: 'text-muted text-xl font-bold md:text-2xl',
+                            },
+                        },
+                        submitButton: {
+                            resetClass: true,
+                            attributes: {
+                                class: ' bg-primary-muted hover:bg-primary-muted font-semibold text-base md:text-lg text-white hover:text-primary transition-colors px-4 py-2 rounded-full w-fit',
+                            },
+                        }
+                    },
+                } %}
+
+                {% set workerId = craft.app.request.getQueryParam('workerId') %}
+                {% if workerId %}
+                    {% set relatedEntry = craft.entries.id(workerId).one() %}
+                    {% if relatedEntry %}
+                        {% do form.setRelations([relatedEntry]) %}
+                    {% endif  %}
+                {% endif %}
+
+                {{ craft.formie.renderForm(form, renderOptions) }}
+            {% endif %}
+        </div>
+    </div>
+</div>

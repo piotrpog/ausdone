@@ -9,7 +9,7 @@ settings:
   postUrl: null
   token: null
   username: fmapi
-  webhook: 'https://fm.x2network.net/fmi/data/v2/databases/ausdone/layouts/requests/records'
+  webhook: 'https://fm.x2network.net/fmi/data/v2/databases/ausdone/layouts/requestwebhook/records'
 sortOrder: 1
 tokenId: null
 type: craftyfm\craftformiefilemaker\WebhookFilemaker

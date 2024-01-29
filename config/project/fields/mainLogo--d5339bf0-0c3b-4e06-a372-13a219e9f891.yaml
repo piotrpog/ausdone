@@ -1,6 +1,6 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: c13bba3b-5701-4f74-b0d6-91e06e282c54 # Header
+fieldGroup: a85eb049-52b5-441c-958f-e27190b3f0ee # Common
 handle: mainLogo
 instructions: null
 name: 'Main Logo'
@@ -13,7 +13,7 @@ settings:
   branchLimit: null
   defaultUploadLocationSource: 'volume:b24eb4b9-6b88-48e2-ac68-648c31f9be66' # Images
   defaultUploadLocationSubpath: null
-  localizeRelations: false
+  localizeRelations: true
   maintainHierarchy: false
   maxRelations: null
   minRelations: null
@@ -23,17 +23,6 @@ settings:
   restrictedDefaultUploadSubpath: null
   restrictedLocationSource: 'volume:da8cb600-809b-4511-8a8d-3d83d127f66f' # Workers
   restrictedLocationSubpath: null
-  selectionCondition:
-    __assoc__:
-      -
-        - elementType
-        - craft\elements\Asset
-      -
-        - fieldContext
-        - global
-      -
-        - class
-        - craft\elements\conditions\assets\AssetCondition
   selectionLabel: null
   showSiteMenu: false
   showUnpermittedFiles: false
